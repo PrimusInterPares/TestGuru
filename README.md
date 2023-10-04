@@ -5,7 +5,7 @@ application up and running.
 
 Things you may want to cover:
 
-* Ruby version
+* Ruby version 3.2.1 (2023-02-08 revision 31819e82c8)
 
 * System dependencies
 
@@ -22,3 +22,11 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+* List of entities
+* Author - creates and edits tests
+* User - passes tests
+* Test - a set of questions and related answers by the author who created the test
+* Question - a text and an array of answers related to it
+* Answer - text and numeric value that determines the number of points for choosing this answer (value,
+  value=0 means that the answer is incorrect). Communication with the author and the user who selected this answer (for statistics).
+* Test system - a program that processes responses and calculates the total number of points
