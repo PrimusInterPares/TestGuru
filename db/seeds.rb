@@ -3,8 +3,8 @@
 
 users = User.create!([
                        { name: 'Michael', surname: 'Petrov', admin: true },
-                       { name: 'Sergey', surname: 'Ivanov', admin: false },
-                       { name: 'Ilya', surname: 'Sergeev', admin: false },
+                       { name: 'Sergey', surname: 'Ivanov' },
+                       { name: 'Ilya', surname: 'Sergeev' },
                        { name: 'Maria', surname: 'Petrova', admin: true }
                      ])
 
@@ -15,11 +15,16 @@ categories = Category.create!([
                               ])
 
 tests = Test.create!([
-                       { title: 'Logical operations', level: 1, category_id: categories[1].id },
-                       { title: 'Information and information processes', category_id: categories[0].id },
-                       { title: 'Input devices', category_id: categories[0].id },
-                       { title: 'Computer networks', level: 1, category_id: categories[1].id },
-                       { title: 'Cyber security', level: 2, category_id: categories[2].id }
+                       { title: 'Logical operations',
+                         level: 1, category_id: categories[1].id, author_id: users[0].id },
+                       { title: 'Information and information processes',
+                         level: 0, category_id: categories[0].id, author_id: users[2].id },
+                       { title: 'Input devices',
+                         level: 0, category_id: categories[0].id, author_id: users[1].id },
+                       { title: 'Computer networks',
+                         level: 1, category_id: categories[1].id, author_id: users[0].id },
+                       { title: 'Cyber security',
+                         level: 2, category_id: categories[2].id, author_id: users[3].id }
                      ])
 
 questions = Question.create!([
