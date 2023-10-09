@@ -2,10 +2,10 @@
 # The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
 
 users = User.create!([
-                       { name: 'Michael', surname: 'Petrov', admin: true },
-                       { name: 'Sergey', surname: 'Ivanov' },
-                       { name: 'Ilya', surname: 'Sergeev' },
-                       { name: 'Maria', surname: 'Petrova', admin: true }
+                       { name: 'Michael', surname: 'Petrov', admin: true, email: 'mpetrov@mail.ru' },
+                       { name: 'Sergey', surname: 'Ivanov', email: 'sivanov@bk.ru' },
+                       { name: 'Ilya', surname: 'Sergeev', email: 'isergeev@gmail.com' },
+                       { name: 'Maria', surname: 'Petrova', admin: true, email: 'mpetrova@list.su' }
                      ])
 
 categories = Category.create!([
