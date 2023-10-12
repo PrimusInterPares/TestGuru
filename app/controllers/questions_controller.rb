@@ -4,9 +4,7 @@ class QuestionsController < ApplicationController
   before_action :find_test, only: %i[index create new]
   before_action :find_question, only: %i[show destroy]
 
-  def index
-    render inline: 'Questions within the test: <%= @test.questions.inspect %>'
-  end
+  def index; end
 
   def show
     render inline: 'Question: <%= @question.inspect %>'
@@ -21,7 +19,7 @@ class QuestionsController < ApplicationController
     end
   end
 
-  def delete
+  def destroy
     if @question.destroy
       render plain: 'Question was deleted'
     else
@@ -29,7 +27,9 @@ class QuestionsController < ApplicationController
     end
   end
 
-  def new; end
+  def new
+    @question = Question.new
+  end
 
   private
 

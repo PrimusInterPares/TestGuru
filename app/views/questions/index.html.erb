@@ -1,0 +1,16 @@
+<h1>Questions</h1>
+
+<table>
+  <tr>
+    <th>Test title</th>
+
+    <th>Questions</th>
+  </tr>
+
+  <th><%= @test.title %></th>
+  <% @test.questions.each do |question| %>
+    <tr>
+      <th><%= question.body %></th>
+    </tr>
+  <% end %>
+</table>
