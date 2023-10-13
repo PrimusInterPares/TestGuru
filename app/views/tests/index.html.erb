@@ -1,0 +1,15 @@
+<h1>Tests</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Level</th>
+  </tr>
+
+  <% @tests.each do |test| %>
+    <tr>
+      <th><%= test.title %></th>
+      <th><%= test.level %></th>
+    </tr>
+  <% end %>
+</table>
