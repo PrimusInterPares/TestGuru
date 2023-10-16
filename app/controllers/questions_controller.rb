@@ -4,32 +4,49 @@ class QuestionsController < ApplicationController
   before_action :find_test, only: %i[index create new]
   before_action :find_question, only: %i[show destroy]
 
-  def index
-    render inline: 'Questions within the test: <%= @test.questions.inspect %>'
-  end
+  def index; end
 
   def show
-    render inline: 'Question: <%= @question.inspect %>'
+    find_question
   end
 
   def create
     @question = @test.questions.new(question_params)
+
     if @question.save
-      render plain: 'Question was created'
+      redirect_to @question
     else
-      render plain: 'Question was not created'
+      render :new, status: :unprocessable_entity
     end
   end
 
-  def delete
+  def destroy
+    @question = find_question
+
     if @question.destroy
-      render plain: 'Question was deleted'
+      redirect_to test_questions_path(test_id: @question.test_id)
     else
       render plain: 'Question was not deleted'
     end
   end
 
-  def new; end
+  def edit
+    @question = find_question
+  end
+
+  def update
+    @question = find_question
+
+    if @question.update(question_params)
+      redirect_to @question
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
+  def new
+    @question = Question.new
+  end
 
   private
 
