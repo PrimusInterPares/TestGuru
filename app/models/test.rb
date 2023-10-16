@@ -4,10 +4,12 @@ class Test < ApplicationRecord
   has_many :tests_users
   has_many :users, through: :tests_users
 
-  validates :title, presence: true,
-                    uniqueness: { scope: :level }
+  validates :author_id, presence: true
 
   validates :level, numericality: { greater_than_or_equal_to: 0, only_integer: true }
+
+  validates :title, presence: true,
+                    uniqueness: { scope: :level }
 
   scope :sort_by_category, lambda { |category|
     joins(:category)
