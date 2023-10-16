@@ -16,10 +16,12 @@ class TestsController < ApplicationController
   end
 
   def destroy
+    @test = find_test
+
     if @test.destroy
-      render plain: 'Test was deleted'
+      redirect_to tests_path
     else
-      render plain: 'Test was not deleted'
+      render html: 'Test was not deleted'
     end
   end
 
