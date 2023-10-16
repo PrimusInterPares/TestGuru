@@ -18,6 +18,17 @@
   <%= @test.author_id %>
 </p>
 
+<h3>Questions within test:</h3>
+
+<%= link_to 'Add new question', new_test_question_path(test_id: @test.id) %>
+<br>
+<br>
+
+<table>
+  <%= render @test.questions %>
+</table>
+
+<br>
 <%= link_to 'Edit', edit_test_path(@test) %>
 <%= link_to 'Back', tests_path %>
 
