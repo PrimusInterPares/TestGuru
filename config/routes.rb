@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   root 'application#hello'
 
   resources :tests do
-    resources :questions, shallow: true
+    resources :questions, shallow: true, except: :index do
+      resources :answers, shallow: true
+    end
   end
 end
