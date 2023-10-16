@@ -1,7 +1,7 @@
 class Answer < ApplicationRecord
   belongs_to :question
 
-  validates :body, :value, :correct, presence: true
+  validates :body, :value, presence: true
 
   validate :validate_max_answers, on: :create
 
