@@ -7,23 +7,40 @@ class QuestionsController < ApplicationController
   def index; end
 
   def show
-    render inline: 'Question: <%= @question.inspect %>'
+    find_question
   end
 
   def create
     @question = @test.questions.new(question_params)
+
     if @question.save
-      render plain: 'Question was created'
+      redirect_to @question
     else
-      render plain: 'Question was not created'
+      render :new, status: :unprocessable_entity
     end
   end
 
   def destroy
+    @question = find_question
+
     if @question.destroy
-      render plain: 'Question was deleted'
+      redirect_to test_questions_path(test_id: @question.test_id)
     else
       render plain: 'Question was not deleted'
+    end
+  end
+
+  def edit
+    @question = find_question
+  end
+
+  def update
+    @question = find_question
+
+    if @question.update(question_params)
+      redirect_to @question
+    else
+      render :edit, status: :unprocessable_entity
     end
   end
 
