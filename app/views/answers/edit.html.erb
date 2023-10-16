@@ -1,0 +1,11 @@
+<h1>Editing answer</h1>
+
+<p>
+  <%= @answer.question.body %>
+</p>
+
+<%= render "form" %>
+<br>
+<%= link_to "Back to question", question_path(@answer.question) %>
+
+<%= render 'shared/footer' %>
