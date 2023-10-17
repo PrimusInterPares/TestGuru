@@ -1,18 +1,16 @@
-<%= turbo_frame_tag "test_passage" do %>
-  <h1>
-    <% if @test_passage.passed? %>
-      <p style="color: green">
-        Test completed!
-      </p>
-    <% else %>
-      <p style="color: red">
-        Test failed!
-      </p>
-    <% end %>
-  </h1>
-  <h2>
-    You have <%= @test_passage.correct_questions_percentage %>% of questions passed.
-  </h2>
+<h1>
+  <% if @test_passage.passed? %>
+    <p style="color: green">
+      Test completed!
+    </p>
+  <% else %>
+    <p style="color: red">
+      Test failed!
+    </p>
+  <% end %>
+</h1>
+<h2>
+  You have <%= @test_passage.correct_questions_percentage %>% of questions passed.
+</h2>
 
-  <%= link_to 'Back to tests list', tests_path %>
-<% end %>
+<%= link_to 'Back to tests list', tests_path %>

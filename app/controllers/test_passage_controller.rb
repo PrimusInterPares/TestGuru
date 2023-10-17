@@ -12,7 +12,11 @@ class TestPassageController < ApplicationController
     if @test_passage.completed?
       redirect_to result_test_passage_path(@test_passage)
     else
-      render :show
+      render turbo_stream: turbo_stream.replace(
+        'show_answers',
+        template: 'test_passage/show',
+        layout: false
+      )
     end
   end
 
