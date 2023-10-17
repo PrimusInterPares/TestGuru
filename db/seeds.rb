@@ -180,22 +180,12 @@ answers = Answer.create!([
                              value: 0.5, correct: true, question_id: questions[15].id }
                          ])
 
-TestsUser.create!([
-                    { test_id: 1, user_id: 1, progress: 26 },
-                    { test_id: 2, user_id: 1, progress: 68 },
-                    { test_id: 3, user_id: 1, progress: 1 },
-                    { test_id: 1, user_id: 2, progress: 93 },
-                    { test_id: 2, user_id: 2, progress: 54 },
-                    { test_id: 4, user_id: 1, progress: 100 },
-                    { test_id: 4, user_id: 2, progress: 12 }
-                  ])
-
-# TestsUser.create!([
-#                     { user_id: 1, test_id: 1, score: 10, date: '2021-10-08' },
-#                     { user_id: 1, test_id: 2, score: 8.5, date: '2021-10-18' },
-#                     { user_id: 1, test_id: 3, score: 4.25, date: '2021-10-20' },
-#                     { user_id: 2, test_id: 1, score: 10, date: '2021-10-11' },
-#                     { user_id: 2, test_id: 2, score: 6, date: '2022-01-10' },
-#                     { user_id: 1, test_id: 4, score: 8, date: '2022-01-21' },
-#                     { user_id: 2, test_id: 4, score: 6, date: '2022-01-24' }
-#                    ])
+TestPassage.create!([
+                      { user_id: 1, test_id: tests[0].id },
+                      { user_id: 1, test_id: tests[1].id },
+                      { user_id: 1, test_id: tests[2].id },
+                      { user_id: 2, test_id: tests[0].id },
+                      { user_id: 2, test_id: tests[1].id },
+                      { user_id: 1, test_id: tests[3].id },
+                      { user_id: 2, test_id: tests[3].id }
+                    ])
