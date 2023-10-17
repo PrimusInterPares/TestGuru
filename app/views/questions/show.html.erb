@@ -1,9 +1,18 @@
 <p>
-  <strong>Body:</strong>
+  <strong>Question body:</strong>
   <%= @question.body %>
 </p>
 
-<%= link_to 'Edit', edit_question_path(@question) %>
-<%= link_to 'Back', test_questions_path(test_id: @question.test_id) %>
+<h2>Answers</h2>
 
-<%= render 'shared/footer' %>
+<%= link_to 'New answer', new_question_answer_path(@question) %>
+<br>
+<br>
+
+<table>
+  <%= render @question.answers %>
+</table>
+
+<br>
+<%= link_to 'Edit this question', edit_question_path(@question) %>
+<%= link_to 'Back to test', test_path(id: @question.test_id) %>

@@ -1,10 +1,10 @@
-<% if resource.errors.present? %>
-  <div>
-    <h2><%= pluralize(resource.errors.count, 'error') %> detected:</h2>
+<% if resource.errors.any? %>
+  <div style="color: red">
+    <h2><%= pluralize(resource.errors.count, 'error') %> prohibited this item from being saved:</h2>
 
     <ul>
-      <% resource.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+      <% resource.errors.each do |error| %>
+        <li><%= error.full_message %></li>
       <% end %>
     </ul>
   </div>

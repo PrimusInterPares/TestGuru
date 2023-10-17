@@ -1,4 +1,6 @@
 <%= form_with model: @test do |form| %>
+style  <%= render 'shared/errors', resource: @test %>
+
   <p>
     <%= form.label :title %><br>
     <%= form.text_field :title, id: :test_title %>
