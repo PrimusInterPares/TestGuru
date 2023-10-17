@@ -28,6 +28,14 @@ class TestPassage < ApplicationRecord
     correct_questions_percentage >= TEST_PASSING_SCORE
   end
 
+  def current_question_number
+    test.questions.order(:id).where('id < ?', current_question.id).count + 1
+  end
+
+  def total_test_questions
+    test.questions.count
+  end
+
   private
 
   def before_validation_set_first_question
