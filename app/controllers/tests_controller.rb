@@ -1,7 +1,7 @@
 class TestsController < ApplicationController
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_test_not_found
 
-  before_action :find_test, only: %i[edit destroy show update]
+  before_action :find_test, only: %i[edit destroy show start update]
   before_action :find_user, only: :start
 
   def index
@@ -43,7 +43,6 @@ class TestsController < ApplicationController
   end
 
   def start
-    @test = find_test
     @user.tests.push(@test)
     redirect_to @user.test_passage(@test)
   end
