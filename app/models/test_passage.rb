@@ -5,6 +5,8 @@ class TestPassage < ApplicationRecord
 
   before_validation :before_validation_set_first_question, on: %i[create update]
 
+  TEST_PASSING_SCORE = 85.freeze
+
   def accept!(answer_ids)
     self.correct_questions += 1 if correct_answer?(answer_ids)
     save!
@@ -12,6 +14,18 @@ class TestPassage < ApplicationRecord
 
   def completed?
     current_question.nil?
+  end
+
+  def total_correct_questions
+    test.questions.count
+  end
+
+  def correct_questions_percentage
+    self.correct_questions.to_f / total_correct_questions * 100
+  end
+
+  def passed?
+    correct_questions_percentage >= TEST_PASSING_SCORE
   end
 
   private
