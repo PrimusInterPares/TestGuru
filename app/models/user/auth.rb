@@ -5,10 +5,6 @@ module User::Auth
   attr_writer :password_confirmation
 
   included do
-    validate :email, if: :email_valid?
-    validates :email, presence: true,
-                      uniqueness: true
-
     validates :password, presence: true, if: proc { |u| u.password_digest.blank? }
     validates :password, confirmation: true
   end
@@ -27,12 +23,6 @@ module User::Auth
   end
 
   private
-
-  EMAIL_TEMPLATE = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i
-
-  def email_valid?
-    (email =~ EMAIL_TEMPLATE).nil? ? false : true
-  end
 
   def digest(string)
     Digest::SHA1.hexdigest(string)

@@ -7,6 +7,10 @@ class User < ApplicationRecord
 
   validates :name, :surname, presence: true
 
+  validate :email, if: :email_valid?
+  validates :email, presence: true,
+                    uniqueness: true
+
   has_secure_password
 
   # returns a list of all Tests that the User passes or has ever passed at this level of difficulty
@@ -17,5 +21,13 @@ class User < ApplicationRecord
 
   def test_passage(test)
     test_passages.order(id: :desc).find_by(test_id: test.id)
+  end
+
+  private
+
+  EMAIL_TEMPLATE = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i
+
+  def email_valid?
+    (email =~ EMAIL_TEMPLATE).nil? ? false : true
   end
 end
