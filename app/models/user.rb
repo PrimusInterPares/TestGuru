@@ -1,15 +1,13 @@
 require 'digest/sha1'
 
 class User < ApplicationRecord
-  include Auth
-
   has_many :test_passages
   has_many :tests, through: :test_passages
   has_many :authored_tests, class_name: 'Test', foreign_key: :author_id
 
   validates :name, :surname, presence: true
 
-  # has_secure_password
+  has_secure_password
 
   # returns a list of all Tests that the User passes or has ever passed at this level of difficulty
   def test_by_level(level)
