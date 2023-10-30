@@ -6,7 +6,7 @@ class User < ApplicationRecord
   has_many :authored_tests, class_name: 'Test', foreign_key: :author_id
 
   validates :name, :surname, presence: true
-  
+
   validates :email, presence: true,
                     uniqueness: true,
                     format: {
