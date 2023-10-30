@@ -1,3 +1,5 @@
+require 'digest/sha1'
+
 class User < ApplicationRecord
   has_many :test_passages
   has_many :tests, through: :test_passages
@@ -5,9 +7,11 @@ class User < ApplicationRecord
 
   validates :name, :surname, presence: true
 
-  validates :email, if: :email_valid?,
-                    presence: true,
+  validate :email, if: :email_valid?
+  validates :email, presence: true,
                     uniqueness: true
+
+  has_secure_password
 
   # returns a list of all Tests that the User passes or has ever passed at this level of difficulty
   def test_by_level(level)

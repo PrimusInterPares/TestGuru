@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  root 'application#hello'
+  root 'tests#index'
 
   resources :tests do
     resources :questions, shallow: true, except: :index do
@@ -18,4 +16,10 @@ Rails.application.routes.draw do
       get :result
     end
   end
+
+  resources :users, only: :create
+  get :signup, to: 'users#new'
+
+  resources :sessions, only: :create
+  get :login, to: 'sessions#new'
 end
