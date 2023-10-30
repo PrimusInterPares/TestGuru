@@ -1,5 +1,7 @@
 class TestPassageController < ApplicationController
 
+  rescue_from ActiveRecord::RecordNotFound with: :rescue_with_test_pas_not_found
+
   before_action :set_test_passage, only: %i[result show update]
 
   def show; end
@@ -24,5 +26,9 @@ class TestPassageController < ApplicationController
 
   def set_test_passage
     @test_passage = TestPassage.find(params[:id])
+  end
+
+  def rescue_with_test_pas_not_found
+    render plain: 'Test passage was not found'
   end
 end
