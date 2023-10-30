@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
   private
 
   def authenticate_user!
-    redirect_to login_path unless current_user
+    redirect_to login_path, status: :see_other unless current_user
 
     cookies[:email] = current_user&.email
   end

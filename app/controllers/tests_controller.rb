@@ -13,7 +13,7 @@ class TestsController < ApplicationController
     @test = Test.new(test_params)
 
     if @test.save
-      redirect_to @test
+      redirect_to @test, status: :see_other
     else
       render :new, status: :unprocessable_entity
     end
@@ -21,7 +21,7 @@ class TestsController < ApplicationController
 
   def destroy
     if @test.destroy
-      redirect_to tests_path
+      redirect_to tests_path, status: :see_other
     else
       render html: 'Test was not deleted'
     end
@@ -31,7 +31,7 @@ class TestsController < ApplicationController
 
   def update
     if @test.update(test_params)
-      redirect_to @test
+      redirect_to @test, status: :see_other
     else
       render :edit, status: :unprocessable_entity
     end
@@ -45,7 +45,7 @@ class TestsController < ApplicationController
 
   def start
     @user.tests.push(@test)
-    redirect_to @user.test_passage(@test)
+    redirect_to @user.test_passage(@test), status: :see_other
   end
 
   private

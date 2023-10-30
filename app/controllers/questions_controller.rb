@@ -12,7 +12,7 @@ class QuestionsController < ApplicationController
     @question = @test.questions.new(question_params)
 
     if @question.save
-      redirect_to @question
+      redirect_to @question, status: :see_other
     else
       render :new, status: :unprocessable_entity
     end
@@ -20,7 +20,7 @@ class QuestionsController < ApplicationController
 
   def destroy
     if @question.destroy
-      redirect_to test_questions_path(test_id: @question.test_id)
+      redirect_to test_questions_path(test_id: @question.test_id), status: :see_other
     else
       render plain: 'Question was not deleted'
     end
@@ -30,7 +30,7 @@ class QuestionsController < ApplicationController
 
   def update
     if @question.update(question_params)
-      redirect_to @question
+      redirect_to @question, status: :see_other
     else
       render :edit, status: :unprocessable_entity
     end

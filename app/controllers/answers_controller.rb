@@ -18,7 +18,7 @@ class AnswersController < ApplicationController
     @answer = @question.answers.new(answer_params)
 
     if @answer.save
-      redirect_to @answer
+      redirect_to @answer, status: :see_other
     else
       render :new, status: :unprocessable_entity
     end
@@ -26,7 +26,7 @@ class AnswersController < ApplicationController
 
   def update
     if @answer.update(answer_params)
-      redirect_to @answer
+      redirect_to @answer, status: :see_other
     else
       render :edit, status: :unprocessable_entity
     end

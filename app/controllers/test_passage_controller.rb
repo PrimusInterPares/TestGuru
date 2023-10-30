@@ -10,7 +10,7 @@ class TestPassageController < ApplicationController
     @test_passage.accept!(params[:answer_ids])
 
     if @test_passage.completed?
-      redirect_to result_test_passage_path(@test_passage)
+      redirect_to result_test_passage_path(@test_passage), status: :see_other
     else
       render turbo_stream: turbo_stream.replace(
         'show_answers',
