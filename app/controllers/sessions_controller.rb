@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       redirect_to tests_path
     else
-      flash.now[:alert] = 'Are you a Guru? Verify your Email and Password, please.'
+      flash.now[:alert] = 'Email or Password is incorrect. Please, enter your Email and Password.'
       render :new, status: :unprocessable_entity
     end
   end
