@@ -11,13 +11,7 @@
   </head>
 
   <body>
-    <% if logged_in? %>
-      <p class="nav user">
-        Welcome, Guru <b><%= current_user.surname %> <%= current_user.name %></b>!
-        <br>
-        <%= link_to 'Sign out', logout_url %>
-      </p>
-    <% end %>
+    <%= render 'shared/nav_bar' %>
 
     <%= yield %>
 
