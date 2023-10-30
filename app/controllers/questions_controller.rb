@@ -1,6 +1,7 @@
 class QuestionsController < ApplicationController
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
 
+  before_action :authenticate_user!
   before_action :find_test, only: %i[index create new]
   before_action :find_question, only: %i[destroy edit show update]
 
