@@ -8,17 +8,25 @@ class SessionsController < ApplicationController
     @_current_user = User.find_by(email: params[:email])
 
     if @_current_user&.authenticate(params[:password])
-      session[:user_id] = @_current_user.id
-      redirect_to cookies.encrypted[:path_to_prev_request] || root_path, status: :see_other
-      cookies.delete(:path_to_prev_request)
+      successful_creation
     else
-      flash.now[:alert] = 'Email or Password is incorrect. Please, try again.'
-      render :new, status: :unprocessable_entity
+      failed_creation
     end
   end
 
   def destroy
     reset_session
     redirect_to login_path, status: :see_other
+  end
+
+  def successful_creation
+    session[:user_id] = @_current_user.id
+    redirect_to cookies.encrypted[:path_to_prev_request] || root_path, status: :see_other
+    cookies.delete(:path_to_prev_request)
+  end
+
+  def failed_creation
+    flash.now[:alert] = 'Email or Password is incorrect. Please, try again.'
+    render :new, status: :unprocessable_entity
   end
 end
