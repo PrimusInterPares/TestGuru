@@ -16,10 +16,12 @@
     <%= form.collection_select :category_id, Category.all, :id, :title, id: :test_category_id, prompt: true %>
   </p>
 
-  <p>
-    <%= form.label :author_id %>:
-    <%= form.collection_select :author_id, User.all, :id, :surname, id: :test_author_id, prompt: true %>
-  </p>
+  <% if @test.author_id? %>
+    <p>
+      <%= form.label :author_id %>:
+      <%= form.collection_select :author_id, User.all, :id, :surname, id: :test_author_id, prompt: true %>
+    </p>
+  <% end %>
 
   <p><%= form.submit %></p>
 <% end %>
