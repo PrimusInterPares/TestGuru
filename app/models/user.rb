@@ -6,10 +6,13 @@ class User < ApplicationRecord
   has_many :authored_tests, class_name: 'Test', foreign_key: :author_id
 
   validates :name, :surname, presence: true
-
-  validate :email, if: :email_valid?
+  
   validates :email, presence: true,
-                    uniqueness: true
+                    uniqueness: true,
+                    format: {
+                      with: URI::MailTo::EMAIL_REGEXP,
+                      message: 'Wrong Email or Password. Please, try again.'
+                    }
 
   has_secure_password
 
@@ -21,13 +24,5 @@ class User < ApplicationRecord
 
   def test_passage(test)
     test_passages.order(id: :desc).find_by(test_id: test.id)
-  end
-
-  private
-
-  EMAIL_TEMPLATE = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i
-
-  def email_valid?
-    (email =~ EMAIL_TEMPLATE).nil? ? false : true
   end
 end
