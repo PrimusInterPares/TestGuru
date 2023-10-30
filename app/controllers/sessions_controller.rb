@@ -9,7 +9,8 @@ class SessionsController < ApplicationController
 
     if @_current_user&.authenticate(params[:password])
       session[:user_id] = @_current_user.id
-      redirect_to tests_path, status: :see_other
+      redirect_to cookies.encrypted[:path_to_prev_request] || root_path, status: :see_other
+      cookies.delete(:path_to_prev_request)
     else
       flash.now[:alert] = 'Email or Password is incorrect. Please, try again.'
       render :new, status: :unprocessable_entity

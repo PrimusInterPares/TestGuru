@@ -10,9 +10,10 @@ class ApplicationController < ActionController::Base
   private
 
   def authenticate_user!
-    redirect_to login_path, status: :see_other unless current_user
+    return if current_user
 
-    cookies[:email] = current_user&.email
+    redirect_to login_path, status: :see_other, alert: 'Authorise to access Test Guru'
+    cookies.encrypted[:path_to_prev_request] = request.fullpath
   end
 
   def current_user
