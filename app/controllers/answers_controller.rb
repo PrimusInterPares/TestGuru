@@ -1,7 +1,6 @@
 class AnswersController < ApplicationController
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_answer_not_found
 
-  before_action :authenticate_user!
   before_action :find_answer, only: %i[destroy edit show update]
   before_action :find_question, only: %i[create new]
 
