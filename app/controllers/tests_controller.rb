@@ -36,7 +36,9 @@ class TestsController < ApplicationController
     end
   end
 
-  def show; end
+  def show
+    @questions = find_test.questions
+  end
 
   def new
     @test = Test.new
