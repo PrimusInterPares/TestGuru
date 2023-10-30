@@ -1,5 +1,4 @@
 class TestPassageController < ApplicationController
-
   rescue_from ActiveRecord::RecordNotFound with: :rescue_with_test_pas_not_found
 
   before_action :set_test_passage, only: %i[result show update]
