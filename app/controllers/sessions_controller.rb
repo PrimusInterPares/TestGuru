@@ -14,10 +14,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    # Remove the user id from the session
-    session.delete(:current_user_id)
-    # Clear the memoized current user
-    @_current_user = nil
+    reset_session
     redirect_to login_path, status: :see_other
   end
 end
