@@ -1,4 +1,7 @@
 class ApplicationController < ActionController::Base
+
+  before_action :authenticate_user!
+
   protect_from_forgery with: :exception
 
   helper_method :current_user,
@@ -7,13 +10,14 @@ class ApplicationController < ActionController::Base
   private
 
   def authenticate_user!
-    redirect_to login_path unless current_user
+    return if current_user
 
-    cookies[:email] = current_user&.email
+    redirect_to login_path, status: :see_other, alert: 'Authorise to access Test Guru'
+    cookies.encrypted[:path_to_prev_request] = request.fullpath
   end
 
   def current_user
-    @current_user ||= User.find_by(id: session[:user_id]) if session[:user_id]
+    @_current_user ||= User.find_by(id: session[:user_id]) if session[:user_id]
   end
 
   def logged_in?
