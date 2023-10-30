@@ -8,7 +8,7 @@ class TestsController < ApplicationController
   end
 
   def create
-    @test = Test.new(test_params)
+    @test = current_user.authored_tests.new(test_params)
 
     if @test.save
       redirect_to @test, status: :see_other
@@ -44,8 +44,8 @@ class TestsController < ApplicationController
   end
 
   def start
-    @user.tests.push(@test)
-    redirect_to @user.test_passage(@test), status: :see_other
+    current_user.tests.push(@test)
+    redirect_to current_user.test_passage(@test), status: :see_other
   end
 
   private
@@ -55,7 +55,7 @@ class TestsController < ApplicationController
   end
 
   def test_params
-    params.require(:test).permit(:title, :level, :category_id, :author_id)
+    params.require(:test).permit(:title, :level, :category_id)
   end
 
   def rescue_with_test_not_found
