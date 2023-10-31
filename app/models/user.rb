@@ -18,7 +18,7 @@ class User < ApplicationRecord
                     uniqueness: true,
                     format: {
                       with: URI::MailTo::EMAIL_REGEXP,
-                      message: 'Wrong Email or Password. Please, try again.'
+                      message: 'Email template: template@example.com'
                     }
 
   # returns a list of all Tests that the User passes or has ever passed at this level of difficulty
