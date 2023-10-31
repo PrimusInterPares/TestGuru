@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   root 'tests#index'
 
-  resources :tests do
+  resources :tests, only: :index do
     resources :questions, shallow: true, except: :index do
       resources :answers, shallow: true, except: :index
     end
@@ -10,6 +10,10 @@ Rails.application.routes.draw do
     member do
       post :start
     end
+  end
+
+  namespace :admin do
+    resources :tests
   end
 
   resources :test_passage, only: %i[show update] do
