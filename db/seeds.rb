@@ -29,6 +29,8 @@ tests = Test.create!([
                        { title: 'Computer networks',
                          level: 1, category_id: categories[1].id, author_id: users[0].id },
                        { title: 'Cyber security',
+                         level: 2, category_id: categories[2].id, author_id: users[3].id },
+                       { title: 'Test',
                          level: 2, category_id: categories[2].id, author_id: users[3].id }
                      ])
 
@@ -67,7 +69,16 @@ questions = Question.create!([
                                { body: 'What tasks are assigned to the system administrator?',
                                  test_id: tests[3].id },
                                { body: 'What benefits do we get by connecting computers to a network?',
-                                 test_id: tests[3].id }
+                                 test_id: tests[3].id },
+
+                               { body: 'Choose the right answer.',
+                                 test_id: tests[5].id },
+                               { body: 'Choose the right answer.',
+                                 test_id: tests[5].id },
+                               { body: 'Choose the right answer.',
+                                 test_id: tests[5].id },
+                               { body: 'Choose the right answer.',
+                                 test_id: tests[5].id }
                              ])
 
 answers = Answer.create!([
@@ -182,7 +193,36 @@ answers = Answer.create!([
                            { body: 'data protection enhancement',
                              value: 0, question_id: questions[15].id },
                            { body: 'data exchange simplification',
-                             value: 0.5, correct: true, question_id: questions[15].id }
+                             value: 0.5, correct: true, question_id: questions[15].id },
+
+                           # Test
+                           { body: 'right answer',
+                             value: 0.5, correct: true, question_id: questions[16].id },
+                           { body: 'right answer',
+                             value: 0.5, correct: true, question_id: questions[16].id },
+                           { body: 'wrong answer',
+                             value: 0, question_id: questions[16].id },
+
+                           { body: 'right answer',
+                             value: 1, correct: true, question_id: questions[17].id },
+                           { body: 'wrong answer',
+                             value: 0, question_id: questions[17].id },
+                           { body: 'wrong answer',
+                             value: 0, question_id: questions[17].id },
+
+                           { body: 'wrong answer',
+                             value: 0, question_id: questions[18].id },
+                           { body: 'right answer',
+                             value: 1, correct: true, question_id: questions[18].id },
+                           { body: 'wrong answer',
+                             value: 0, question_id: questions[18].id },
+
+                           { body: 'right answer',
+                             value: 0.5, correct: true, question_id: questions[19].id },
+                           { body: 'wrong answer',
+                             value: 0, question_id: questions[19].id },
+                           { body: 'right answer',
+                             value: 0.5, correct: true, question_id: questions[19].id }
                          ])
 
 TestPassage.create!([
