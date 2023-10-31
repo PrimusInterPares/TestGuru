@@ -20,12 +20,12 @@
 
 <h3>Questions within test:</h3>
 
-<%= link_to 'Add new question', new_test_question_path(test_id: @test.id) %>
+Questions<%= link_to 'Add new question', new_admin_test_question_path(test_id: @test.id) %>
 <br>
 <br>
 
 <table>
-  <%= render partial: 'questions/question', collection:  @questions %>
+  <%= render @questions %>
 </table>
 
 <br>
