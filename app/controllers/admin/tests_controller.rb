@@ -11,7 +11,7 @@ class Admin::TestsController < Admin::BaseController
     @test = current_user.authored_tests.new(test_params)
 
     if @test.save
-      redirect_to @test, status: :see_other
+      redirect_to [:admin, @test], status: :see_other
     else
       render :new, status: :unprocessable_entity
     end
@@ -19,7 +19,7 @@ class Admin::TestsController < Admin::BaseController
 
   def destroy
     if @test.destroy
-      redirect_to tests_path, status: :see_other
+      redirect_to admin_tests_path, status: :see_other
     else
       render html: 'Test was not deleted'
     end
@@ -29,7 +29,7 @@ class Admin::TestsController < Admin::BaseController
 
   def update
     if @test.update(test_params)
-      redirect_to @test, status: :see_other
+      redirect_to [:admin, @test], status: :see_other
     else
       render :edit, status: :unprocessable_entity
     end
