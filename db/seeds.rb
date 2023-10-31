@@ -3,13 +3,13 @@
 
 users = User.create!([
                        { name: 'Michael', surname: 'Petrov',
-                         admin: true, email: 'mpetrov@test.test', password: '123456' },
+                         type: 'Admin', email: 'mpetrov@test.test', password: '123456' },
                        { name: 'Sergey', surname: 'Ivanov',
                          email: 'sivanov@test.test', password: '123456' },
                        { name: 'Ilya', surname: 'Sergeev',
                          email: 'isergeev@test.test', password: '123456' },
                        { name: 'Maria', surname: 'Petrova',
-                         admin: true, email: 'mpetrova@test.test', password: '123456' }
+                         type: 'Admin', email: 'mpetrova@test.test', password: '123456' }
                      ])
 
 categories = Category.create!([
