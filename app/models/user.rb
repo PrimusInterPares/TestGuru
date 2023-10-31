@@ -1,7 +1,14 @@
-require 'digest/sha1'
-
 class User < ApplicationRecord
-  has_many :test_passages
+  # Include default devise modules. Others available are:
+  # :lockable, :timeoutable, :trackable and :omniauthable
+  devise :confirmable,
+         :database_authenticatable,
+         :registerable,
+         :recoverable,
+         :rememberable,
+         :validatable
+
+  has_many :test_passages, dependent: :destroy
   has_many :tests, through: :test_passages
   has_many :authored_tests, class_name: 'Test', foreign_key: :author_id
 
@@ -11,10 +18,8 @@ class User < ApplicationRecord
                     uniqueness: true,
                     format: {
                       with: URI::MailTo::EMAIL_REGEXP,
-                      message: 'Wrong Email or Password. Please, try again.'
+                      message: 'Email template: template@example.com'
                     }
-
-  has_secure_password
 
   # returns a list of all Tests that the User passes or has ever passed at this level of difficulty
   def test_by_level(level)

@@ -25,9 +25,9 @@
 <br>
 
 <table>
-  <%= render @questions %>
+  <%= render partial: 'questions/question', collection:  @questions %>
 </table>
 
 <br>
-<%= link_to 'Edit this test', edit_test_path(@test) %>
-<%= link_to 'Back to tests list', tests_path %>
+<%= link_to 'Edit this test', edit_admin_test_path(@test) %>
+<%= link_to 'Back to tests list', admin_tests_path %>

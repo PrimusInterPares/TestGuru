@@ -1,26 +1,11 @@
 class ApplicationController < ActionController::Base
+  protect_from_forgery with: :exception
+
+  before_action :configure_sign_up_params, only: :create
 
   before_action :authenticate_user!
 
-  protect_from_forgery with: :exception
-
-  helper_method :current_user,
-                :logged_in?
-
-  private
-
-  def authenticate_user!
-    return if current_user
-
-    redirect_to login_path, status: :see_other, alert: 'Authorise to access Test Guru'
-    cookies.encrypted[:path_to_prev_request] = request.fullpath
-  end
-
-  def current_user
-    @_current_user ||= User.find_by(id: session[:user_id]) if session[:user_id]
-  end
-
-  def logged_in?
-    current_user.present?
+  def configure_sign_up_params
+    devise_parameter_sanitizer.permit(:sign_up, keys: %i[name surname])
   end
 end

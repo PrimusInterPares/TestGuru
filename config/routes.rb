@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
+
   root 'tests#index'
 
-  resources :tests do
+  resources :tests, only: :index do
     resources :questions, shallow: true, except: :index do
       resources :answers, shallow: true, except: :index
     end
@@ -11,16 +12,19 @@ Rails.application.routes.draw do
     end
   end
 
+  namespace :admin do
+    resources :tests
+  end
+
   resources :test_passage, only: %i[show update] do
     member do
       get :result
     end
   end
 
-  resources :users, only: :create
-  get :signup, to: 'users#new'
-
-  resources :sessions, only: :create
-  get :login, to: 'sessions#new'
-  get :logout, to: 'sessions#destroy'
+  devise_for :users,
+             path_names: {
+               sign_in: :login,
+               sign_out: :logout
+             }
 end
