@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
   protected
 
   def after_sign_in_path_for(resource)
-    user_signed_in? && current_user.admin? ? admin_tests_path : root_path
+    user_signed_in? && current_user.is_a?(Admin) ? admin_tests_path : root_path
   end
 
   def configure_sign_up_params
