@@ -1,24 +1,24 @@
 <p>
-  <strong>Title:</strong>
+  <strong><%= t('.table.title') %>:</strong>
   <%= @test.title %>
 </p>
 
 <p>
-  <strong>Level:</strong>
+  <strong><%= t('.table.level') %>:</strong>
   <%= @test.level %>
 </p>
 
 <p>
-  <strong>Category:</strong>
+  <strong><%= t('.table.category_id') %>:</strong>
   <%= @test.category.title %>
 </p>
 
 <p>
-  <strong>Author:</strong>
-  <%= @test.author_id %>
+  <strong><%= t('.table.author_id') %>:</strong>
+  <%= @test.author.surname %>
 </p>
 
-<h3>Questions within test:</h3>
+<h3><%= t('.table.questions') %>:</h3>
 
 <%= link_to 'Add new question', new_admin_test_question_path(test_id: @test.id) %>
 <br>

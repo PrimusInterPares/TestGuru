@@ -53,6 +53,8 @@ en:
         failure: "Test was not deleted"
         success: "Test was deleted"
       test_not_found: "Test was not found"
+    nav_bar:
+      header: "TestGuru | Admin Panel"
 
   devise:
     confirmations:

@@ -53,6 +53,8 @@ ru:
         failure: "Тест не был удалён"
         success: "Тест удалён"
       test_not_found: "Тест не найден"
+    nav_bar:
+      header: "TestGuru | Панель Администратора"
 
 
   devise:
