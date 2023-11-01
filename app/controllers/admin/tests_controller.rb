@@ -1,7 +1,7 @@
 class Admin::TestsController < Admin::BaseController
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_test_not_found
 
-  before_action :find_test, only: %i[edit destroy show start update]
+  before_action :find_test, only: %i[edit destroy show update]
 
   def index
     @tests = Test.all
@@ -11,7 +11,7 @@ class Admin::TestsController < Admin::BaseController
     @test = current_user.authored_tests.new(test_params)
 
     if @test.save
-      redirect_to @test, status: :see_other
+      redirect_to [:admin, @test], status: :see_other
     else
       render :new, status: :unprocessable_entity
     end
@@ -19,7 +19,7 @@ class Admin::TestsController < Admin::BaseController
 
   def destroy
     if @test.destroy
-      redirect_to tests_path, status: :see_other
+      redirect_to admin_tests_path, status: :see_other
     else
       render html: 'Test was not deleted'
     end
@@ -29,7 +29,7 @@ class Admin::TestsController < Admin::BaseController
 
   def update
     if @test.update(test_params)
-      redirect_to @test, status: :see_other
+      redirect_to [:admin, @test], status: :see_other
     else
       render :edit, status: :unprocessable_entity
     end
@@ -41,11 +41,6 @@ class Admin::TestsController < Admin::BaseController
 
   def new
     @test = Test.new
-  end
-
-  def start
-    current_user.tests.push(@test)
-    redirect_to current_user.test_passage(@test), status: :see_other
   end
 
   private

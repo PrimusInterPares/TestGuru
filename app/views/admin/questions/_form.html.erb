@@ -1,7 +1,7 @@
 <h3><%= question_header(@test, @question) %></h3>
 <%= render 'shared/errors', resource: @question %>
 
-<%= form_with model: [@test, @question] do |form| %>
+<%= form_with model: [:admin, @test, @question] do |form| %>
   <p>
     <%= form.label :body %><br>
     <%= form.text_area :body, id: :question_title, value: @question.body, cols: 100, rows: 8 %>
