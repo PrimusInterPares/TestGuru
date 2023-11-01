@@ -1,0 +1,5 @@
+ru:
+  devise:
+    tests:
+      index:
+        header: "Доступные тесты"
