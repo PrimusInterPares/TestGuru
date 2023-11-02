@@ -1,0 +1,51 @@
+ru:
+  admin:
+    questions:
+      show:
+        question: "Вопрос:"
+        header: "Ответы"
+        new_answer: "Добавить ответ"
+        edit: "Редактировать"
+        back_to_test: "К тесту"
+      new:
+        back_to_test: "К тесту"
+        header: "Создать новый вопрос"
+      edit:
+        edit_question: "Редактирование вопроса"
+        back_to_question: "К вопросу"
+        back_to_test: "К тесту"
+      question:
+        show: "Просмотр"
+        edit: "Редактировать"
+        delete: "Удалить"
+        confirm: "Вы уверены?"
+      form:
+        header_edit_question: "Редактировать вопрос теста \"%{title}\""
+        header_create_new_question: "Создать новый вопрос в тесте \"%{title}\""
+
+    answers:
+      show:
+        edit: "Редактировать"
+        back_to_question: "К вопросу"
+        question: "Вопрос:"
+        body: "Тело"
+        value: "Ценность"
+        correct: "Правильность"
+      new:
+        back_to_question: "К вопросу"
+        header: "Новый ответ"
+      edit:
+        back_to_question: "К вопросу"
+        header: "Редактирование ответа \"%{body}\""
+      answer:
+        show: "Просмотр"
+        edit: "Редактировать"
+        delete: "Удалить"
+        confirm: "Вы уверены?"
+
+  layouts:
+    admin:
+      header: "Панель Администратора | TestGuru"
+
+  header_edit_question: "Редактировать вопрос теста \"%{title}\""
+  header_create_new_question: "Создать новый вопрос в тесте \"%{title}\""

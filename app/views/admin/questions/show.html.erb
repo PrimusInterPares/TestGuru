@@ -1,11 +1,11 @@
 <p>
-  <strong>Question body:</strong>
+  <strong><%= t('.question') %></strong>
   <%= @question.body %>
 </p>
 
-<h2>Answers</h2>
+<h2><%= t('.header') %></h2>
 
-<%= link_to 'New answer', new_admin_question_answer_path(@question) %>
+<%= link_to t('.new_answer'), new_admin_question_answer_path(@question) %>
 <br>
 <br>
 
@@ -14,5 +14,5 @@
 </table>
 
 <br>
-<%= link_to 'Edit this question', edit_admin_question_path(@question) %>
-<%= link_to 'Back to test', admin_test_path(id: @question.test_id) %>
+<%= link_to t('.edit'), edit_admin_question_path(@question) %>
+<%= link_to t('.back_to_test'), admin_test_path(id: @question.test_id) %>

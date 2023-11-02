@@ -20,7 +20,7 @@
 
 <h3><%= t('.table.questions') %>:</h3>
 
-<%= link_to 'Add new question', new_admin_test_question_path(test_id: @test.id) %>
+<%= link_to t('.new_question'), new_admin_test_question_path(test_id: @test.id) %>
 <br>
 <br>
 
@@ -29,5 +29,5 @@
 </table>
 
 <br>
-<%= link_to 'Edit this test', edit_admin_test_path(@test) %>
-<%= link_to 'Back to tests list', admin_tests_path %>
+<%= link_to t('.edit'), edit_admin_test_path(@test) %>
+<%= link_to t('.back_to_tests'), admin_tests_path %>

@@ -1,16 +1,16 @@
 <h1>
   <% if @test_passage.passed? %>
     <p style="color: green">
-      Test completed!
+      <%= t('.success', title: @test_passage.test.title) %>
     </p>
   <% else %>
     <p style="color: red">
-      Test failed!
+      <%= t('.failure', title: @test_passage.test.title) %>
     </p>
   <% end %>
 </h1>
 <h2>
-  You have <%= @test_passage.correct_questions_percentage %>% of questions passed.
+  <%= t('.correct_questions_percentage', questions: @test_passage.correct_questions_percentage) %>
 </h2>
 
-<%= link_to 'Back to tests list', tests_path %>
+<%= link_to t('.back_to_tests'), tests_path %>

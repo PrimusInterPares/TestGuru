@@ -1,0 +1,51 @@
+en:
+  admin:
+    questions:
+      show:
+        question: "Question:"
+        header: "Answers"
+        new_answer: "Add answer"
+        edit: "Edit"
+        back_to_test: "Back to test"
+      new:
+        back_to_test: "Back to test"
+        header: "Create new question"
+      edit:
+        back_to_test: "Back to test"
+        edit_question: "Edit question"
+        back_to_question: "Back to question"
+      question:
+        show: "Show"
+        edit: "Edit"
+        delete: "Delete"
+        confirm: "Are you sure?"
+      form:
+        header_edit_question: "Edit question in \"%{title}\" test"
+        header_create_new_question: "Create new question into \"%{title}\" test"
+
+    answers:
+      show:
+        edit: "Edit"
+        back_to_question: "Back to question"
+        question: "Question:"
+        body: "Body"
+        value: "Value"
+        correct: "Correct"
+      new:
+        back_to_question: "Back to question"
+        header: "New answer"
+      edit:
+        back_to_question: "Back to question"
+        header: "Edit \"%{body}\" answer"
+      answer:
+        show: "Show"
+        edit: "Edit"
+        delete: "Delete"
+        confirm: "Are you sure?"
+
+  layouts:
+    admin:
+      header: "Admin Panel | TestGuru"
+
+  header_edit_question: "Edit question in \"%{title}\" test"
+  header_create_new_question: "Create new question into \"%{title}\" test"
