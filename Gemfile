@@ -38,6 +38,7 @@ gem 'jbuilder'
 
 # Authentication
 gem 'devise', '~> 4.9.2'
+gem 'devise-i18n'
 gem 'responders', '~> 3.1.0'
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

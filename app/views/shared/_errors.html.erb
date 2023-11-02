@@ -1,6 +1,8 @@
 <% if resource.errors.any? %>
   <div style="color: red">
-    <h2><%= pluralize(resource.errors.count, 'error') %> prohibited this item from being saved:</h2>
+    <h2>
+      <%= t('.header', count: resource.errors.count, resource: resource.model_name.human) %>
+    </h2>
 
     <ul>
       <% resource.errors.each do |error| %>

@@ -9,7 +9,7 @@ class TestsController < ApplicationController
 
   def start
     current_user.tests.push(@test)
-    redirect_to current_user.test_passage(@test), status: :see_other
+    redirect_to current_user.test_passage(@test), status: :see_other, notice: t('.test_started')
   end
 
   private
@@ -19,6 +19,6 @@ class TestsController < ApplicationController
   end
 
   def rescue_with_test_not_found
-    render plain: 'Test was not found'
+    render t('.test_not_found')
   end
 end

@@ -1,0 +1,46 @@
+ru:
+  admin:
+    tests:
+      test:
+        confirm: "Вы уверены?"
+        show: "Просмотр"
+        edit: "Редактировать"
+        delete: "Удалить"
+      index:
+        table:
+          header: "Доступные тесты"
+          title: "Название"
+          level: "Уровень"
+          category: "Категория"
+          questions_count: "Количество вопросов"
+          actions: "Действия"
+        new_test: "Добавить тест"
+      create:
+        success: "Тест успешно создан"
+      edit:
+        back_to_tests: "К списку тестов"
+        header: "Редактирование теста \"%{title}\""
+      new:
+        header: "Создать новый тест"
+        back_to_tests: "К списку тестов"
+      show:
+        table:
+          title: "Название"
+          level: "Уровень"
+          category_id: "Категория"
+          author_id: "Автор"
+          questions: "Вопросы теста"
+        new_question: "Добавить вопрос"
+        back_to_tests: "К списку тестов"
+        edit: "Редактировать"
+      update:
+        success: "Тест упешно обновлён"
+      destroy:
+        failure: "Тест не был удалён"
+        success: "Тест удалён"
+      test_not_found: "Тест не найден"
+
+    nav_bar:
+      header: "TestGuru | Панель Администратора"
+      welcome_message: "Добро пожаловать, Гуру %{surname} %{name}!"
+      sign_out: "Выход"

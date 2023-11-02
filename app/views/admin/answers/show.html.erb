@@ -1,23 +1,22 @@
-<h1>Question</h1>
-
 <p>
+  <strong><%= t('.question') %></strong>
   <%= @answer.question.body %>
 </p>
 
 <p>
-  <b>Answer:</b>
+  <b><%= t('.body') %>:</b>
   <%= @answer.body %>
 </p>
 
 <p>
-  <b>Value:</b>
+  <b><%= t('.value') %>:</b>
   <%= @answer.value %>
 </p>
 
 <p>
-  <b>Correct:</b>
+  <b><%= t('.correct') %>:</b>
   <%= @answer.correct %>
 </p>
 
-<%= link_to "Edit this answer", edit_admin_answer_path(@answer) %>
-<%= link_to "Back to question", admin_question_path(@answer.question) %>
+<%= link_to t('.edit'), edit_admin_answer_path(@answer) %>
+<%= link_to t('.back_to_question'), admin_question_path(@answer.question) %>

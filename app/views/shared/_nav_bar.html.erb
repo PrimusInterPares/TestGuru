@@ -1,14 +1,13 @@
-<p class="nav user"><%= link_to 'Test Guru project', root_path %></p>
+<p class="nav user"><%= link_to t('.header'), root_path %></p>
   <% if user_signed_in? %>
     <p class="nav user">
-      Welcome, Guru <b><%= current_user.surname %> <%= current_user.name %></b>!
-      <br>
-      <%= link_to 'Sign out', destroy_user_session_path, data: { turbo_method: :delete } %>
+      <%= t('.welcome_message', surname: current_user.surname, name: current_user.name) %> |
+      <%= link_to t('.sign_out'), destroy_user_session_path, data: { turbo_method: :delete } %>
     </p>
   <% else %>
     <p class="nav user">
-      <%= link_to 'Sign up', new_user_registration_path %>
+      <%= link_to t('.sign_up'), new_user_registration_path %>
       <br>
-      <%= link_to 'Sign in',  new_user_session_path%>
+      <%= link_to t('.sign_in'),  new_user_session_path%>
     </p>
   <% end %>

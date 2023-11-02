@@ -1,4 +1,4 @@
-<h1>Editing answer</h1>
+<h1><%= t('.header', body: @answer.body) %></h1>
 
 <p>
   <%= @answer.question.body %>
@@ -6,4 +6,4 @@
 
 <%= render "form" %>
 <br>
-<%= link_to "Back to question", admin_question_path(@answer.question) %>
+<%= link_to t('.back_to_question'), admin_question_path(@answer.question) %>

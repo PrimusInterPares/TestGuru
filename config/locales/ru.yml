@@ -1,0 +1,70 @@
+ru:
+  helpers:
+    submit:
+      test:
+        create: "Создать тест"
+        start: "Начать тест"
+        update: "Обновить тест"
+      question:
+        create: "Создать вопрос"
+        update: "Обновить вопрос"
+      answer:
+        create: "Создать ответ"
+        update: "Обновить ответ"
+    select:
+      prompt: "Выбрать категорию"
+    label:
+      test:
+        title: "Название"
+        level: "Уровень"
+        category_id: "Категория"
+        author_id: "Автор"
+      category:
+        title: "Название"
+      question:
+        body: "Тело"
+      answer:
+        body: "Тело"
+        value: "Ценность"
+        correct: "Правильность"
+
+  tests:
+    index:
+      table:
+        header: "Доступные тесты"
+        title: "Название"
+        level: "Уровень"
+        category_id: "Категория"
+        questions_count: "Количество вопросов"
+        actions: "Действия"
+    test_started: "Вы начали тест"
+    test_not_found: "Тест не найден"
+    test:
+      start_test: "Начать"
+
+  test_passage:
+    result:
+      success: "Тест \"%{title}\" успешно завершен!"
+      failure: "Тест \"%{title}\" провален!"
+      correct_questions_percentage: "Вы верно ответили на %{questions}% вопросов."
+      back_to_tests: "К списку тестов"
+    show:
+      header: "Вы проходите тест \"%{title}\""
+
+  tests_mailer:
+    completed_test:
+      subject: "Вы только что завершили тест TestGuru!"
+
+  shared:
+    errors:
+      header:
+        one: "%{count} ошибка не позволила сохранить этот %{resource}:"
+        other: "%{count} ошибок не позволили сохранить этот %{resource}:"
+        few: "%{count} ошибки не позволили сохранить этот %{resource}:"
+        many: "%{count} ошибок не позволили сохранить этот %{resource}:"
+    nav_bar:
+      welcome_message: "Добро пожаловать, Гуру %{surname} %{name}!"
+      header: "Проект TestGuru"
+      sign_out: "Выход"
+      sign_up: "Создать аккаунт"
+      sign_in: "Войти"
