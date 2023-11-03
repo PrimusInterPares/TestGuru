@@ -1,13 +1,13 @@
-<p class="nav user"><%= link_to t('.header'), root_path %></p>
-  <% if user_signed_in? %>
-    <p class="nav user">
+<nav class="navbar navbar-light bg-light mx-3">
+  <%= link_to t('.header'), root_path, class: 'navbar-brand' %>
+
+  <span class="navbar-text">
+    <% if user_signed_in? %>
       <%= t('.welcome_message', surname: current_user.surname, name: current_user.name) %> |
       <%= link_to t('.sign_out'), destroy_user_session_path, data: { turbo_method: :delete } %>
-    </p>
-  <% else %>
-    <p class="nav user">
+    <% else %>
+      <%= link_to t('.sign_in'),  new_user_session_path%> |
       <%= link_to t('.sign_up'), new_user_registration_path %>
-      <br>
-      <%= link_to t('.sign_in'),  new_user_session_path%>
-    </p>
-  <% end %>
+    <% end %>
+  </span>
+</nav>
