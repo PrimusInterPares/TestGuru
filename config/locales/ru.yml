@@ -102,7 +102,7 @@ ru:
         many: "%{count} ошибок не позволили сохранить этот %{resource}:"
     nav_bar:
       welcome_message: "Добро пожаловать, Гуру %{surname} %{name}!"
-      header: "Проект TestGuru"
+      header: "TestGuru"
       sign_out: "Выход"
       sign_up: "Создать аккаунт"
       sign_in: "Войти"

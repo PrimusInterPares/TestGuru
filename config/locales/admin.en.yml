@@ -41,7 +41,7 @@ en:
       test_not_found: "Test was not found"
 
     nav_bar:
-      project: "TestGuru project"
+      project: "TestGuru"
       admin_panel: "Admin Panel"
       hello_message: "Hello, admin %{surname} %{name}!"
       sign_out: "Sign out"
