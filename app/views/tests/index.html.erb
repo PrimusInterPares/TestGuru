@@ -1,13 +1,21 @@
-<h1><%= t('.table.header') %></h1>
+<div class="row justify-content-center mt-3">
+  <div class="col col-md-6">
+    <h1><%= t('.table.header') %></h1>
+  </div>
 
-<table >
-  <tr>
-    <th><%= t('.table.title') %></th>
-    <th><%= t('.table.level') %></th>
-    <th><%= t('.table.category_id') %></th>
-    <th><%= t('.table.questions_count') %></th>
-    <th><%= t('.table.actions') %></th>
-  </tr>
-
-  <%= render @tests %>
-</table>
+  <div class="col-8">
+    <table class="table table-sm">
+      <thead class="table align-middle">
+        <tr>
+          <th scope="col"><%= t('.table.title') %></th>
+          <th scope="col"><%= t('.table.level') %></th>
+          <th scope="col"><%= t('.table.category_id') %></th>
+          <th scope="col" class="text-center"><%= t('.table.questions_count') %></th>
+          <th scope="col" class="text-center"><%= t('.table.actions') %></th>
+        </tr>
+        <tbody class="table-group-divider align-middle">
+          <%= render @tests %>
+        </tbody>
+    </table>
+  </div>
+</div>

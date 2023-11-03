@@ -1,22 +1,27 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title><%= t('.header') %></title>
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <%= csrf_meta_tags %>
-  <%= csp_meta_tag %>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
 
-  <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-  <%= javascript_importmap_tags %>
-</head>
+    <title><%= t('.header') %></title>
 
-<body>
-<%= render 'admin/nav_bar' %>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
 
-<%= render 'shared/flash' %>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
 
-<%= yield %>
+  <body>
+  <div class="container">
+    <%= render 'admin/nav_bar' %>
 
-<%= render 'shared/footer' %>
-</body>
+    <%= render 'shared/flash' %>
+
+    <%= yield %>
+
+    <%= render 'shared/footer' %>
+  </div>
+  </body>
 </html>
