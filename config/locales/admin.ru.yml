@@ -41,6 +41,7 @@ ru:
       test_not_found: "Тест не найден"
 
     nav_bar:
-      header: "TestGuru | Панель Администратора"
-      welcome_message: "Добро пожаловать, Гуру %{surname} %{name}!"
+      project: "TestGuru"
+      admin_panel: "Панель Администратора"
+      hello_message: "Здравствуйте, администратор %{surname} %{name}!"
       sign_out: "Выход"

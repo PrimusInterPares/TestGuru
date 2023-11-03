@@ -2,12 +2,18 @@
   <%= link_to t('.header'), root_path, class: 'navbar-brand' %>
 
   <span class="navbar-text">
+    <% if current_user.is_a?(Admin) %>
+      <%= link_to t('.to_admin_panel'),  admin_tests_path, class: "btn btn-primary text-light" %>
+    <% end %>
+  </span>
+
+  <span class="navbar-text">
     <% if user_signed_in? %>
       <%= t('.welcome_message', surname: current_user.surname, name: current_user.name) %> |
-      <%= link_to t('.sign_out'), destroy_user_session_path, data: { turbo_method: :delete } %>
+      <%= link_to t('.sign_out'), destroy_user_session_path, data: { turbo_method: :delete }, class: "btn btn-outline-dark text-dark" %>
     <% else %>
-      <%= link_to t('.sign_in'),  new_user_session_path%> |
-      <%= link_to t('.sign_up'), new_user_registration_path %>
+      <%= link_to t('.sign_in'),  new_user_session_path, class: "btn btn-outline-dark text-dark" %> |
+      <%= link_to t('.sign_up'), new_user_registration_path, class: "btn btn-outline-dark text-dark" %>
     <% end %>
   </span>
 </nav>
