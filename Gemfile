@@ -36,6 +36,10 @@ gem 'jbuilder'
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
 # gem 'bcrypt', '~> 3.1.19'
 
+# UI
+gem 'bootstrap'
+gem 'jquery-rails'
+
 # Authentication
 gem 'devise', '~> 4.9.2'
 gem 'devise-i18n'
