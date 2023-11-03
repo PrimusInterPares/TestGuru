@@ -43,6 +43,11 @@ ru:
         delete: "Удалить"
         confirm: "Вы уверены?"
 
+  users:
+    sessions:
+      new:
+        header: "Вход в TestGuru"
+
   layouts:
     admin:
       header: "Панель Администратора | TestGuru"

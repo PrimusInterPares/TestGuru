@@ -43,6 +43,11 @@ en:
         delete: "Delete"
         confirm: "Are you sure?"
 
+  users:
+    sessions:
+      new:
+        header: "Enter TestGuru"
+
   layouts:
     admin:
       header: "Admin Panel | TestGuru"
