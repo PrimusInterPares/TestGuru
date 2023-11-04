@@ -42,6 +42,7 @@ en:
         edit: "Edit"
         delete: "Delete"
         confirm: "Are you sure?"
+      answer_not_found: "Answer was not found"
 
   users:
     sessions:
@@ -54,3 +55,7 @@ en:
 
   header_edit_question: "Edit question in \"%{title}\" test"
   header_create_new_question: "Create new question into \"%{title}\" test"
+  answers:
+    answer_not_found: "Answer was not found"
+  questions:
+    question_not_found: "Question was not found"

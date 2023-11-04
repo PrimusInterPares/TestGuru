@@ -42,6 +42,7 @@ ru:
         edit: "Редактировать"
         delete: "Удалить"
         confirm: "Вы уверены?"
+      answer_not_found: "Ответ не найден"
 
   users:
     sessions:
@@ -54,3 +55,7 @@ ru:
 
   header_edit_question: "Редактировать вопрос теста \"%{title}\""
   header_create_new_question: "Создать новый вопрос в тесте \"%{title}\""
+  answers:
+    answer_not_found: "Ответ не найден"
+  questions:
+    question_not_found: "Вопрос не найден"

@@ -4,6 +4,6 @@ class AnswersController < ApplicationController
   private
 
   def rescue_with_answer_not_found
-    render plain: 'Answer was not found'
+    render t('.answer_not_found')
   end
 end
