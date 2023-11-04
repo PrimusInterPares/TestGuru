@@ -10,10 +10,10 @@
   <span class="navbar-text">
     <% if user_signed_in? %>
       <%= t('.welcome_message', surname: current_user.surname, name: current_user.name) %> |
-      <%= link_to t('.sign_out'), destroy_user_session_path, data: { turbo_method: :delete }, class: "btn btn-outline-dark text-dark" %>
+      <%= link_to t('.sign_out'), destroy_user_session_path, data: { turbo_method: :delete }, class: "btn btn-secondary text-light" %>
     <% else %>
-      <%= link_to t('.sign_in'),  new_user_session_path, class: "btn btn-outline-dark text-dark" %> |
-      <%= link_to t('.sign_up'), new_user_registration_path, class: "btn btn-outline-dark text-dark" %>
+      <%= link_to t('.sign_in'),  new_user_session_path, class: "btn btn-secondary text-light" %> |
+      <%= link_to t('.sign_up'), new_user_registration_path, class: "btn btn-secondary text-light" %>
     <% end %>
   </span>
 </nav>
