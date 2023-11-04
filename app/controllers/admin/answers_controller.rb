@@ -55,6 +55,6 @@ class Admin::AnswersController < Admin::BaseController
   end
 
   def rescue_with_answer_not_found
-    render plain: 'Answer was not found'
+    render t('.answer_not_found')
   end
 end

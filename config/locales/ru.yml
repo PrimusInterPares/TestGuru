@@ -79,6 +79,8 @@ ru:
     test_not_found: "Тест не найден"
     test:
       start_test: "Начать"
+    start:
+      cannot_start_test: "Извините, вы не можете начать тест, в котором нет вопросов."
 
   test_passage:
     result:

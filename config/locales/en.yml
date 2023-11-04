@@ -79,6 +79,8 @@ en:
     test_not_found: "Test was not found"
     test:
       start_test: "Start"
+    start:
+      cannot_start_test: "Sorry, you cannot start a test with no question."
 
   test_passage:
     result:
