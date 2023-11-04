@@ -5,6 +5,6 @@
 
   <span class="navbar-text">
     <%= t('.hello_message', surname: current_user.surname, name: current_user.name) %> |
-    <%= link_to t('.sign_out'), destroy_user_session_path, data: { turbo_method: :delete }, class: "btn btn-outline-dark text-dark" %>
+    <%= link_to t('.sign_out'), destroy_user_session_path, data: { turbo_method: :delete }, class: "btn btn-secondary text-light" %>
   </span>
 </nav>
