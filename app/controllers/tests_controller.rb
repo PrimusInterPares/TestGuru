@@ -8,14 +8,23 @@ class TestsController < ApplicationController
   end
 
   def start
-    current_user.tests.push(@test)
-    redirect_to current_user.test_passage(@test), status: :see_other, notice: t('.test_started')
+    if no_questions?
+      flash[:alert] = t('.cannot_start_test')
+      redirect_to tests_path
+    else
+      current_user.tests.push(@test)
+      redirect_to current_user.test_passage(@test), status: :see_other, notice: t('.test_started')
+    end
   end
 
   private
 
   def find_test
     @test = Test.find(params[:id])
+  end
+
+  def no_questions?
+    @test.questions.count.zero? || @test.questions.count.nil?
   end
 
   def rescue_with_test_not_found
