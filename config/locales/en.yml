@@ -68,7 +68,7 @@ en:
 
   services:
     gist_question_service:
-      desc: "A question about test \"%{@test.title}\" from TestGuru"
+      desc: "A question about test \"%{title}\" from TestGuru"
 
   tests:
     index:
