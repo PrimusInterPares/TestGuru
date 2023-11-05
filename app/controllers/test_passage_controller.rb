@@ -12,11 +12,7 @@ class TestPassageController < ApplicationController
       TestsMailer.completed_test(@test_passage).deliver_now
       redirect_to result_test_passage_path(@test_passage), status: :see_other
     else
-      render turbo_stream: turbo_stream.replace(
-        'show_answers',
-        template: 'test_passage/show',
-        layout: false
-      )
+      render_next_question
     end
   end
 
@@ -34,6 +30,14 @@ class TestPassageController < ApplicationController
   end
 
   private
+
+  def render_next_question
+    render turbo_stream: turbo_stream.replace(
+      'show_answers',
+      template: 'test_passage/show',
+      layout: false
+    )
+  end
 
   def new_gist_notification_message(source)
     "#{t('.gist.success')} #{view_context.link_to(t('.gist.view_gist'),
