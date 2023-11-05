@@ -29,6 +29,7 @@ Rails.application.routes.draw do
                sign_out: :logout
              },
              controllers: {
-               sessions: 'users/sessions'
+               sessions: 'users/sessions',
+               registrations: 'users/registrations'
              }
 end
