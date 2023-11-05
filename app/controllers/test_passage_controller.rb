@@ -1,5 +1,5 @@
 class TestPassageController < ApplicationController
-  before_action :set_test_passage, only: %i[result show update]
+  before_action :set_test_passage, only: %i[gist result show update]
 
   def show; end
 
@@ -7,7 +7,6 @@ class TestPassageController < ApplicationController
 
   def update
     @test_passage.accept!(params[:answer_ids])
-
 
     if @test_passage.completed?
       TestsMailer.completed_test(@test_passage).deliver_now
@@ -19,6 +18,17 @@ class TestPassageController < ApplicationController
         layout: false
       )
     end
+  end
+
+  def gist
+    result = GistQuestionService.new(@test_passage.current_question).call
+    flash_options = if result.success?
+                      { notice: t('.success') }
+                    else
+                      { alert: t('.failure') }
+                    end
+
+    redirect_to @test_passage, flash_options
   end
 
   private

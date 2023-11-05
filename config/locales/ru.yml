@@ -66,6 +66,10 @@ ru:
         minute: "Минута"
         second: "Секунда"
 
+  services:
+    gist_question_service:
+      desc: "Вопрос о тесте \"%{@test.title}\" из TestGuru"
+
   tests:
     index:
       table:
@@ -90,6 +94,10 @@ ru:
       back_to_tests: "К списку тестов"
     show:
       header: "Вы проходите тест \"%{title}\""
+      gist_question_button: "Создать gist с этим вопросом"
+    gist:
+      success: "Gist успешно сохранен."
+      failure: "Во время сохранения gist произошла ошибка."
 
   tests_mailer:
     completed_test:
