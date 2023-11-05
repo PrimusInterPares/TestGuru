@@ -98,6 +98,7 @@ en:
     gist:
       success: "Gist is saved successfully."
       failure: "Error occurred while saving the gist."
+      view_gist: "View gist on GitHub"
 
   tests_mailer:
     completed_test:

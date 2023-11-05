@@ -98,6 +98,7 @@ ru:
     gist:
       success: "Gist успешно сохранен."
       failure: "Во время сохранения gist произошла ошибка."
+      view_gist: "Посмотреть gist на GitHub"
 
   tests_mailer:
     completed_test:

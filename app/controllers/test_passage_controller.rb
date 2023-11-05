@@ -21,17 +21,26 @@ class TestPassageController < ApplicationController
   end
 
   def gist
-    result = GistQuestionService.new(@test_passage.current_question).call
-    flash_options = if result.success?
-                      { notice: t('.success') }
-                    else
-                      { alert: t('.failure') }
-                    end
+    service = GistQuestionService.new(@test_passage.current_question)
+    result = service.call
 
-    redirect_to @test_passage, flash_options
+    if service.success?
+      flash[:notice] = new_gist_notification_message(result)
+    else
+      flash[:alert] = t('.failure')
+    end
+
+    redirect_to @test_passage, status: :see_other
   end
 
   private
+
+  def new_gist_notification_message(source)
+    "#{t('.gist.success')} #{view_context.link_to(t('.gist.view_gist'),
+                                                  source.html_url,
+                                                  target: :_blank)
+                           }"
+  end
 
   def set_test_passage
     @test_passage = TestPassage.find(params[:id])
