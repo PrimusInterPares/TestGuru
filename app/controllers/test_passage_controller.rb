@@ -21,6 +21,9 @@ class TestPassageController < ApplicationController
     result = service.call
 
     if service.success?
+      current_user.authored_gists.create!(question: @test_passage.current_question,
+                                          author_id: current_user,
+                                          url: result.html_url)
       flash[:notice] = new_gist_notification_message(result)
     else
       flash[:alert] = t('.failure')
@@ -40,10 +43,7 @@ class TestPassageController < ApplicationController
   end
 
   def new_gist_notification_message(source)
-    "#{t('.gist.success')} #{view_context.link_to(t('.gist.view_gist'),
-                                                  source.html_url,
-                                                  target: :_blank)
-                           }"
+    "#{t('.gist.success')} #{view_context.link_to(t('.gist.view_gist'), source.html_url, target: :_blank)}"
   end
 
   def set_test_passage
