@@ -234,3 +234,10 @@ TestPassage.create!([
                       { user_id: 1, test_id: tests[3].id },
                       { user_id: 2, test_id: tests[3].id }
                     ])
+
+Gist.create!([
+               { question_id: questions[1].id, author_id: users[0].id, url: 'test1' },
+               { question_id: questions[2].id, author_id: users[1].id, url: 'test2' },
+               { question_id: questions[3].id, author_id: users[2].id, url: 'test3' },
+               { question_id: questions[4].id, author_id: users[3].id, url: 'test4' }
+             ])

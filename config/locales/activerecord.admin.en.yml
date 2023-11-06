@@ -44,6 +44,14 @@ en:
         confirm: "Are you sure?"
       answer_not_found: "Answer was not found"
 
+    gists:
+      index:
+        table:
+          header: "Created gists"
+          question: "Question"
+          author_email: "Author email"
+          gist_url: "Link to the gist"
+
   users:
     sessions:
       new:

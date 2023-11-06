@@ -8,6 +8,7 @@ en:
       test_passage: "Test passage"
       user: "User"
       admin: "Administrator"
+      gist: "Gist"
 
     attributes:
       category:
@@ -28,6 +29,10 @@ en:
         surname: "Surname"
         email: "Email"
         type: "Type"
+      gist:
+        question: "Question"
+        author: "Author"
+        url: "Gist url"
 
     errors:
       messages:

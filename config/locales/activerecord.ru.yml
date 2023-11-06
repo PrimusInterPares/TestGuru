@@ -8,6 +8,7 @@ ru:
       test_passage: "Прохождение теста"
       user: "Пользователь"
       admin: "Администратор"
+      gist: "Gist"
 
     attributes:
       category:
@@ -28,6 +29,10 @@ ru:
         surname: "Фамилия"
         email: "Электронная почта"
         type: "Тип"
+      gist:
+        question: "Вопрос"
+        author: "Автор "
+        url: "Ссылка на gist"
 
     errors:
       messages:

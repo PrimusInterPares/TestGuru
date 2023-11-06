@@ -1,5 +1,5 @@
 <% flash.each do |key, message| %>
   <div class="alert alert-<%= flash_alert(key) %>" role="alert">
-    <%= content_tag :p, message %>
+    <%= content_tag :p, sanitize(message, attributes: %w[href target]) %>
   </div>
 <% end %>

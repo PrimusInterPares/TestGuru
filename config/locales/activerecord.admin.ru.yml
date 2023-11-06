@@ -44,6 +44,14 @@ ru:
         confirm: "Вы уверены?"
       answer_not_found: "Ответ не найден"
 
+    gists:
+      index:
+        table:
+          header: "Созданные gist'ы"
+          question: "Вопрос"
+          author_email: "Email автора"
+          gist_url: "Ссылка на gist"
+
   users:
     sessions:
       new:

@@ -12,26 +12,39 @@ class TestPassageController < ApplicationController
       TestsMailer.completed_test(@test_passage).deliver_now
       redirect_to result_test_passage_path(@test_passage), status: :see_other
     else
-      render turbo_stream: turbo_stream.replace(
-        'show_answers',
-        template: 'test_passage/show',
-        layout: false
-      )
+      render_next_question
     end
   end
 
   def gist
-    result = GistQuestionService.new(@test_passage.current_question).call
-    flash_options = if result.success?
-                      { notice: t('.success') }
-                    else
-                      { alert: t('.failure') }
-                    end
+    service = GistQuestionService.new(@test_passage.current_question)
+    result = service.call
 
-    redirect_to @test_passage, flash_options
+    if service.success?
+      current_user.authored_gists.create!(question: @test_passage.current_question,
+                                          author_id: current_user,
+                                          url: result.html_url)
+      flash[:notice] = new_gist_notification_message(result)
+    else
+      flash[:alert] = t('.failure')
+    end
+
+    redirect_to @test_passage, status: :see_other
   end
 
   private
+
+  def render_next_question
+    render turbo_stream: turbo_stream.replace(
+      'show_answers',
+      template: 'test_passage/show',
+      layout: false
+    )
+  end
+
+  def new_gist_notification_message(source)
+    "#{t('.gist.success')} #{view_context.link_to(t('.gist.view_gist'), source.html_url, target: :_blank)}"
+  end
 
   def set_test_passage
     @test_passage = TestPassage.find(params[:id])

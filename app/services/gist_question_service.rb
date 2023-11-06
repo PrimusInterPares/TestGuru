@@ -1,5 +1,7 @@
 class GistQuestionService
-  def initialize(question, client: nil)
+  ACCESS_TOKEN = ENV['GITHUB_TOKEN']
+
+  def initialize(question, client: client_octokit)
     @question = question
     @test = @question.test
     @client = client || GitHubClient.new
@@ -9,11 +11,15 @@ class GistQuestionService
     @client.create_gist(gist_params)
   end
 
+  def success?
+    @client.last_response.status == 201
+  end
+
   private
 
   def gist_params
     {
-      description: I18n.t('services.gist_question_service.desc'),
+      description: I18n.t('services.gist_question_service.desc', title: @test.title),
       files: {
         ' test-guru-question.txt ': {
           content: gist_content
@@ -27,5 +33,9 @@ class GistQuestionService
     content = [@question.body]
     content += @question.answers.pluck(:body)
     content.join("\n")
+  end
+
+  def client_octokit
+    Octokit::Client.new(access_token: ACCESS_TOKEN)
   end
 end

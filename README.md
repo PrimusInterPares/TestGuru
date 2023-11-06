@@ -6,7 +6,7 @@ application up and running.
 Things you may want to cover:
 
 * Ruby version 3.2.1 (2023-02-08 revision 31819e82c8)
-* 
+
 * Rails version 7.1.1
 
 * System dependencies
