@@ -43,5 +43,7 @@ ru:
     nav_bar:
       project: "TestGuru"
       admin_panel: "Панель Администратора"
+      tests: "Тесты"
+      gists: "Gist'ы"
       hello_message: "Здравствуйте, администратор %{surname} %{name}!"
       sign_out: "Выход"

@@ -43,5 +43,7 @@ en:
     nav_bar:
       project: "TestGuru"
       admin_panel: "Admin Panel"
+      tests: "Tests"
+      gists: "Gists"
       hello_message: "Hello, admin %{surname} %{name}!"
       sign_out: "Sign out"
