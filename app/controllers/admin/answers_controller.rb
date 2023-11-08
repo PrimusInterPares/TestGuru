@@ -36,7 +36,7 @@ class Admin::AnswersController < Admin::BaseController
     if @answer.destroy
       redirect_to [:admin, @answer.question]
     else
-      render html: 'Answer was not deleted'
+      render html: t('.answer_not_deleted')
     end
   end
 
@@ -55,6 +55,6 @@ class Admin::AnswersController < Admin::BaseController
   end
 
   def rescue_with_answer_not_found
-    render t('.answer_not_found')
+    render html: t('.answer_not_found')
   end
 end

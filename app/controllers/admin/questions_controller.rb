@@ -22,7 +22,7 @@ class Admin::QuestionsController < Admin::BaseController
     if @question.destroy
       redirect_to admin_test_questions_path(test_id: @question.test_id), status: :see_other
     else
-      render plain: 'Question was not deleted'
+      render html: t('.question_not_deleted')
     end
   end
 
@@ -55,6 +55,6 @@ class Admin::QuestionsController < Admin::BaseController
   end
 
   def rescue_with_question_not_found
-    render plain: 'Question was not found'
+    render html: t('questions.question_not_found')
   end
 end
