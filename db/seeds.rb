@@ -236,8 +236,8 @@ TestPassage.create!([
                     ])
 
 Gist.create!([
-               { question_id: questions[1].id, author_id: users[0].id, url: 'test1', github_gist_id: 'test_id' },
-               { question_id: questions[2].id, author_id: users[1].id, url: 'test2', github_gist_id: 'test_id' },
-               { question_id: questions[3].id, author_id: users[2].id, url: 'test3', github_gist_id: 'test_id' },
-               { question_id: questions[4].id, author_id: users[3].id, url: 'test4', github_gist_id: 'test_id' }
+               { question_id: questions[1].id, author_id: users[0].id, url: 'test1', github_gist_id: 'test_id_1' },
+               { question_id: questions[2].id, author_id: users[1].id, url: 'test2', github_gist_id: 'test_id_2' },
+               { question_id: questions[3].id, author_id: users[2].id, url: 'test3', github_gist_id: 'test_id_3' },
+               { question_id: questions[4].id, author_id: users[3].id, url: 'test4', github_gist_id: 'test_id_4' }
              ])
