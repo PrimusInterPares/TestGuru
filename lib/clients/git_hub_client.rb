@@ -1,5 +1,4 @@
 class GitHubClient
-  ROOT_ENDPOINT = 'https://api.github.com'.freeze
   ACCESS_TOKEN = ENV['GITHUB_TOKEN']
 
   def initialize
@@ -14,9 +13,21 @@ class GitHubClient
     end
   end
 
+  def delete_gist(params)
+    @http_client.delete("gists/#{params[:gist_id]}", params) do |request|
+      request.headers['Authorization'] = "token #{ACCESS_TOKEN}"
+      request.headers['Content-Type'] = 'application/json'
+      request.body = params.to_json
+    end
+  end
+
+  def last_response
+    @http_client.last_response
+  end
+
   private
 
   def setup_http_client
-    Faraday.new(url: ROOT_ENDPOINT)
+    Octokit::Client.new(access_token: ACCESS_TOKEN)
   end
 end

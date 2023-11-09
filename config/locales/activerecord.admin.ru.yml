@@ -22,6 +22,8 @@ ru:
       form:
         header_edit_question: "Редактировать вопрос теста \"%{title}\""
         header_create_new_question: "Создать новый вопрос в тесте \"%{title}\""
+      destroy:
+        question_not_deleted: "Вопрос не был удалён"
 
     answers:
       show:
@@ -43,6 +45,8 @@ ru:
         delete: "Удалить"
         confirm: "Вы уверены?"
       answer_not_found: "Ответ не найден"
+      destroy:
+        answer_not_deleted: "Ответ не был удалён"
 
     gists:
       index:
@@ -51,6 +55,11 @@ ru:
           question: "Вопрос"
           author_email: "Email автора"
           gist_url: "Ссылка на gist"
+          delete: "Удалить"
+      destroy:
+        gist_not_deleted_from_github: "Gist не был удалён из GitHub"
+        gist_not_deleted_from_db: "Gist не был удалён из БД"
+        gist_successfully_deleted: "Gist успешно удалён"
 
   users:
     sessions:

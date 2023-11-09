@@ -33,6 +33,7 @@ en:
         question: "Question"
         author: "Author"
         url: "Gist url"
+        github_gist_id: "Gist ID in GitHub"
 
     errors:
       messages:

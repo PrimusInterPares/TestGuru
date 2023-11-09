@@ -33,6 +33,7 @@ ru:
         question: "Вопрос"
         author: "Автор "
         url: "Ссылка на gist"
+        github_gist_id: "Gist ID в GitHub"
 
     errors:
       messages:

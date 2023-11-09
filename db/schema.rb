@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_11_05_230143) do
+ActiveRecord::Schema[7.1].define(version: 2023_11_07_105335) do
   create_table "answers", force: :cascade do |t|
     t.string "body", null: false
     t.float "value", null: false
@@ -33,6 +33,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_05_230143) do
     t.string "url", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "github_gist_id", null: false
     t.index ["author_id"], name: "index_gists_on_author_id"
     t.index ["question_id"], name: "index_gists_on_question_id"
   end

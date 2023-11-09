@@ -22,6 +22,8 @@ en:
       form:
         header_edit_question: "Edit question in \"%{title}\" test"
         header_create_new_question: "Create new question into \"%{title}\" test"
+      destroy:
+        question_not_deleted: "Question was not deleted"
 
     answers:
       show:
@@ -43,6 +45,8 @@ en:
         delete: "Delete"
         confirm: "Are you sure?"
       answer_not_found: "Answer was not found"
+      destroy:
+        answer_not_deleted: "Answer was not deleted"
 
     gists:
       index:
@@ -51,6 +55,11 @@ en:
           question: "Question"
           author_email: "Author email"
           gist_url: "Link to the gist"
+          delete: "Delete"
+      destroy:
+        gist_not_deleted_from_github: "Gist was not deleted from GitHub"
+        gist_not_deleted_from_db: "Gist was not deleted from DB"
+        gist_successfully_deleted: "The gist was successfully deleted"
 
   users:
     sessions:

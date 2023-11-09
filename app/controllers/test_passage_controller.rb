@@ -23,7 +23,8 @@ class TestPassageController < ApplicationController
     if service.success?
       current_user.authored_gists.create!(question: @test_passage.current_question,
                                           author_id: current_user,
-                                          url: result.html_url)
+                                          url: result.html_url,
+                                          github_gist_id: result.id)
       flash[:notice] = new_gist_notification_message(result)
     else
       flash[:alert] = t('.failure')

@@ -7,4 +7,6 @@ class Gist < ApplicationRecord
   validates :question_id, presence: true
 
   validates :url, presence: true, uniqueness: true
+
+  validates :github_gist_id, presence: true, uniqueness: true
 end
