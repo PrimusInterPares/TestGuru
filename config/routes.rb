@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
-    resources :gists, only: %i[index]
+    resources :gists, only: %i[destroy index]
   end
 
   namespace :admin do
