@@ -3,11 +3,13 @@
   <td><%= gist.author.email %></td>
   <td><%= link_to gist.url, gist.url, target: "_blank" %></td>
   <td>
-    <%= link_to t('admin.gists.index.table.delete'),
+    <%= button_to t('admin.gists.index.table.delete'),
                   admin_gist_path(gist),
-                  data: {
-                    turbo_method: :delete,
-                    turbo_confirm: t('admin.tests.test.confirm')
+                  method: :delete,
+                  form: {
+                    data: {
+                      turbo_confirm: t('admin.tests.test.confirm')
+                    }
                   },
                   class: "btn btn-danger"
     %>
