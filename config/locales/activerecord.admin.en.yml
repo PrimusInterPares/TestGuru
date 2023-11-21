@@ -61,6 +61,47 @@ en:
         gist_not_deleted_from_db: "Gist was not deleted from DB"
         gist_successfully_deleted: "The gist was successfully deleted"
 
+    badges:
+      badge:
+        show: "Show"
+        edit: "Edit"
+        delete: "Delete"
+        confirm: "Are you sure?"
+        alt_image_tag: "Badge image"
+      create:
+        failure: "Failed to create a badge"
+        success: "The badge is successfully created"
+      destroy:
+        failure: "Failed to delete the badge"
+        success: "The badge is successfully deleted"
+      edit:
+        back_to_badge: "Back to badge"
+        header: "Badge \"%{name}\""
+      index:
+        new_badge: "Create new badge"
+        table:
+          header: "Badges"
+          name: "Name"
+          badge_image: "Badge image"
+          rule: "Rule"
+          parameter: "Parameter"
+          actions: "Actions"
+      new:
+        back_to_badges: "Back to badges list"
+        header: "New badge"
+      show:
+        name: "Name"
+        image_url: "Image URL"
+        rule: "Rule"
+        parameter: "Parameter"
+        edit: "Edit"
+        back_to_badges: "Back to badges list"
+        badge_image: "Badge image"
+        alt_image_tag: "Badge image"
+      update:
+        failure: "Failed to update the badge"
+        success: "The badge is successfully updated"
+
   users:
     sessions:
       new:
@@ -76,3 +117,5 @@ en:
     answer_not_found: "Answer was not found"
   questions:
     question_not_found: "Question was not found"
+  badges:
+    badge_not_found: "Badge is not found"

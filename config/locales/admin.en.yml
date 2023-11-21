@@ -47,3 +47,4 @@ en:
       gists: "Gists"
       hello_message: "Hello, admin %{surname} %{name}!"
       sign_out: "Sign out"
+      Badges: "Badges"

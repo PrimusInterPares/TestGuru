@@ -2,21 +2,19 @@ Rails.application.routes.draw do
 
   root 'tests#index'
 
-  resources :tests, only: :index do
-    member do
-      post :start
-    end
-  end
-
   namespace :admin do
     resources :gists, only: %i[destroy index]
-  end
-
-  namespace :admin do
+    resources :badges, shallow: true
     resources :tests do
       resources :questions, shallow: true, except: :index do
         resources :answers, shallow: true, except: :index
       end
+    end
+  end
+
+  resources :tests, only: :index do
+    member do
+      post :start
     end
   end
 
@@ -36,4 +34,6 @@ Rails.application.routes.draw do
                sessions: 'users/sessions',
                registrations: 'users/registrations'
              }
+
+  # resources :badges, only: %i[index]
 end

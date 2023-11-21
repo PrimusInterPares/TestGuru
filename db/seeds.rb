@@ -13,25 +13,25 @@ users = User.create!([
                      ])
 
 categories = Category.create!([
-                                { title: 'Simple' },
-                                { title: 'Intermediate' },
-                                { title: 'Complex' }
+                                { title: 'Logic' },
+                                { title: 'Backend' },
+                                { title: 'Computer science' }
 
                               ])
 
 tests = Test.create!([
                        { title: 'Logical operations',
-                         level: 1, category_id: categories[1].id, author_id: users[0].id },
+                         level: 1, category_id: categories[0].id, author_id: users[0].id },
                        { title: 'Information and information processes',
-                         level: 0, category_id: categories[0].id, author_id: users[2].id },
+                         level: 0, category_id: categories[2].id, author_id: users[2].id },
                        { title: 'Input devices',
-                         level: 0, category_id: categories[0].id, author_id: users[1].id },
+                         level: 0, category_id: categories[2].id, author_id: users[1].id },
                        { title: 'Computer networks',
-                         level: 1, category_id: categories[1].id, author_id: users[0].id },
+                         level: 1, category_id: categories[2].id, author_id: users[0].id },
                        { title: 'Cyber security',
-                         level: 2, category_id: categories[2].id, author_id: users[3].id },
+                         level: 2, category_id: categories[1].id, author_id: users[3].id },
                        { title: 'Test',
-                         level: 2, category_id: categories[2].id, author_id: users[3].id }
+                         level: 2, category_id: categories[1].id, author_id: users[3].id }
                      ])
 
 questions = Question.create!([
@@ -241,3 +241,18 @@ Gist.create!([
                { question_id: questions[3].id, author_id: users[2].id, url: 'test3', github_gist_id: 'test_id_3' },
                { question_id: questions[4].id, author_id: users[3].id, url: 'test4', github_gist_id: 'test_id_4' }
              ])
+
+badges = Badge.create!([
+                         { name: 'Badge_1',
+                           image_url: 'https://cdn0.iconfinder.com/data/icons/education-science-2/100/Education__science_2_10-1024.png',
+                           rule: 'all_tests_of_category_completed', parameter: '1' },
+                         { name: 'Badge_2',
+                           image_url: 'https://cdn0.iconfinder.com/data/icons/education-science-2/100/Education__science_2_10-1024.png',
+                           rule: 'success_on_first_try', parameter: '2' },
+                         { name: 'Badge_3',
+                           image_url: 'https://cdn0.iconfinder.com/data/icons/education-science-2/100/Education__science_2_10-1024.png',
+                           rule: 'all_tests_of_level_completed', parameter: '3' },
+                         { name: 'Badge_4',
+                           image_url: 'https://cdn0.iconfinder.com/data/icons/education-science-2/100/Education__science_2_10-1024.png',
+                           rule: 'all_tests_of_category_completed', parameter: '4' }
+                       ])
