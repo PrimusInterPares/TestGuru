@@ -82,7 +82,7 @@ en:
         table:
           header: "Badges"
           name: "Name"
-          image_url: "Image URL"
+          badge_image: "Badge image"
           rule: "Rule"
           parameter: "Parameter"
           actions: "Actions"
@@ -96,6 +96,8 @@ en:
         parameter: "Parameter"
         edit: "Edit"
         back_to_badges: "Back to badges list"
+        badge_image: "Badge image"
+        alt_image_tag: "Badge image"
       update:
         failure: "Failed to update the badge"
         success: "The badge is successfully updated"

@@ -9,6 +9,7 @@ en:
       user: "User"
       admin: "Administrator"
       gist: "Gist"
+      badge: "Badge"
 
     attributes:
       category:
@@ -34,6 +35,11 @@ en:
         author: "Author"
         url: "Gist url"
         github_gist_id: "Gist ID in GitHub"
+      badge:
+        name: "Name"
+        image_url: "Image URL"
+        rule: ""
+        parameter: "Parameter"
 
     errors:
       messages:

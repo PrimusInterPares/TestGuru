@@ -9,6 +9,7 @@ ru:
       user: "Пользователь"
       admin: "Администратор"
       gist: "Gist"
+      badge: "Бейдж"
 
     attributes:
       category:
@@ -34,6 +35,11 @@ ru:
         author: "Автор "
         url: "Ссылка на gist"
         github_gist_id: "Gist ID в GitHub"
+      badge:
+        name: "Имя"
+        image_url: "URL значка"
+        rule: "Правило"
+        parameter: "Параметр"
 
     errors:
       messages:

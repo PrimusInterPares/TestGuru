@@ -67,7 +67,7 @@ ru:
         edit: "Редактировать"
         delete: "Удалить"
         confirm: "Вы уверены?"
-        alt_image_tag: "Изображение бейджа"
+        alt_image_tag: "Значок бейджа"
       create:
         failure: "Не удалось создать бейдж"
         success: "Бейдж успешно создан"
@@ -82,7 +82,7 @@ ru:
         table:
           header: "Бейджи"
           name: "Имя"
-          image_url: "URL изображения"
+          badge_image: "Значок бейджа"
           rule: "Правило"
           parameter: "Параметр"
           actions: "Действия"
@@ -96,6 +96,8 @@ ru:
         parameter: "Параметр"
         edit: "Редактировать"
         back_to_badges: "К списку бейджей"
+        badge_image: "Значок бейджа"
+        alt_image_tag: "Значок бейджа"
       update:
         failure: "Не удалось отредактировать бейдж"
         success: "Бейдж успешно отредактирован"
