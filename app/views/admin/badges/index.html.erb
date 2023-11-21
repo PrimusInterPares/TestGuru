@@ -1,0 +1,24 @@
+<div class="row justify-content-center mt-3">
+  <div class="col col-md-6">
+    <h1><%= t('.table.header') %></h1>
+  </div>
+
+  <div class="col-10">
+    <p><%= link_to t('.new_badge'), new_admin_badge_path, class: "btn btn-info" %></p>
+
+    <table class="table table-sm">
+      <thead class="table align-middle">
+      <tr>
+        <th scope="col"><%= t('.table.image_url') %></th>
+        <th scope="col"><%= t('.table.name') %></th>
+        <th scope="col"><%= t('.table.rule') %></th>
+        <th scope="col"><%= t('.table.parameter') %></th>
+        <th scope="col" colspan='3' class="text-center"><%= t('.table.actions') %></th>
+      </tr>
+      </thead>
+      <tbody class="table-group-divider align-middle">
+        <%= render @badges %>
+      </tbody>
+    </table>
+  </div>
+</div>

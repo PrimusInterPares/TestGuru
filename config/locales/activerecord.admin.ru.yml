@@ -61,6 +61,45 @@ ru:
         gist_not_deleted_from_db: "Gist не был удалён из БД"
         gist_successfully_deleted: "Gist успешно удалён"
 
+    badges:
+      badge:
+        show: "Просмотр"
+        edit: "Редактировать"
+        delete: "Удалить"
+        confirm: "Вы уверены?"
+        alt_image_tag: "Изображение бейджа"
+      create:
+        failure: "Не удалось создать бейдж"
+        success: "Бейдж успешно создан"
+      destroy:
+        failure: "Не удалось удалить бейдж"
+        success: "Бейдж успешно изменён"
+      edit:
+        back_to_badge: "К бейджу"
+        header: "Бейдж \"%{name}\""
+      index:
+        new_badge: "Создать новый бейдж"
+        table:
+          header: "Бейджи"
+          name: "Имя"
+          image_url: "URL изображения"
+          rule: "Правило"
+          parameter: "Параметр"
+          actions: "Действия"
+      new:
+        back_to_badges: "К списку бейджей"
+        header: "Новый бейдж"
+      show:
+        name: "Имя"
+        image_url: "URL изображения"
+        rule: "Правило"
+        parameter: "Параметр"
+        edit: "Редактировать"
+        back_to_badges: "К списку бейджей"
+      update:
+        failure: "Не удалось отредактировать бейдж"
+        success: "Бейдж успешно отредактирован"
+
   users:
     sessions:
       new:
@@ -76,3 +115,5 @@ ru:
     answer_not_found: "Ответ не найден"
   questions:
     question_not_found: "Вопрос не найден"
+  badges:
+    badge_not_found: "Бейдж не найден"

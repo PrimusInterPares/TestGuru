@@ -1,0 +1,23 @@
+<p>
+  <strong><%= t('.name') %>:</strong>
+  <%= @badge.name %>
+</p>
+
+<p>
+  <strong><%= t('.image_url') %>:</strong>
+  <%= @badge.image_url %>
+</p>
+
+<p>
+  <strong><%= t('.rule') %>:</strong>
+  <%= @badge.rule %>
+</p>
+
+<p>
+  <strong><%= t('.parameter') %>:</strong>
+  <%= @badge.parameter %>
+</p>
+
+<br>
+<%= link_to t('.edit'), edit_admin_badge_path(@badge) %>
+<%= link_to t('.back_to_badges'), admin_badges_path %>
