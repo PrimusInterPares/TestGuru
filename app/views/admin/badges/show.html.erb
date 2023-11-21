@@ -4,6 +4,11 @@
 </p>
 
 <p>
+  <strong><%= t('.badge_image') %>:</strong>
+  <%= image_tag( @badge.image_url, size: "30x30", alt: t('.alt_image_tag')) %>
+</p>
+
+<p>
   <strong><%= t('.image_url') %>:</strong>
   <%= @badge.image_url %>
 </p>
