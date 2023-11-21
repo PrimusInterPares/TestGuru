@@ -18,7 +18,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_21_102810) do
     t.string "body", null: false
     t.float "value", null: false
     t.boolean "correct", default: false, null: false
-    t.integer "question_id"
+    t.bigint "question_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["question_id"], name: "index_answers_on_question_id"
@@ -26,7 +26,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_21_102810) do
 
   create_table "badges", force: :cascade do |t|
     t.string "name", default: "Badge", null: false
-    t.string "image_url"
+    t.string "image_url", default: "https://cdn0.iconfinder.com/data/icons/education-science-2/100/Education__science_2_10-1024.png"
     t.string "rule"
     t.string "parameter"
     t.datetime "created_at", null: false
@@ -40,8 +40,8 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_21_102810) do
   end
 
   create_table "gists", force: :cascade do |t|
-    t.integer "question_id", null: false
-    t.integer "author_id", null: false
+    t.bigint "question_id", null: false
+    t.bigint "author_id", null: false
     t.string "url", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -52,16 +52,16 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_21_102810) do
 
   create_table "questions", force: :cascade do |t|
     t.string "body", null: false
-    t.integer "test_id"
+    t.bigint "test_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["test_id"], name: "index_questions_on_test_id"
   end
 
   create_table "test_passages", force: :cascade do |t|
-    t.integer "user_id", null: false
-    t.integer "test_id", null: false
-    t.integer "current_question_id"
+    t.bigint "user_id", null: false
+    t.bigint "test_id", null: false
+    t.bigint "current_question_id"
     t.integer "correct_questions", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -73,10 +73,10 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_21_102810) do
   create_table "tests", force: :cascade do |t|
     t.string "title", null: false
     t.integer "level", default: 0, null: false
-    t.integer "category_id"
+    t.bigint "category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "author_id", null: false
+    t.bigint "author_id", null: false
     t.index ["author_id"], name: "index_tests_on_author_id"
     t.index ["category_id"], name: "index_tests_on_category_id"
     t.index ["title", "level"], name: "index_tests_on_title_and_level", unique: true
