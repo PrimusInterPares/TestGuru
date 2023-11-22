@@ -119,3 +119,6 @@ en:
     question_not_found: "Question was not found"
   badges:
     badge_not_found: "Badge is not found"
+  user_badges:
+    index:
+      receive_date: "Received"

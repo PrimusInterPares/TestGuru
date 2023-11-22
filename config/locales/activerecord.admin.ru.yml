@@ -119,3 +119,6 @@ ru:
     question_not_found: "Вопрос не найден"
   badges:
     badge_not_found: "Бейдж не найден"
+  user_badges:
+    index:
+      receive_date: "Получен"

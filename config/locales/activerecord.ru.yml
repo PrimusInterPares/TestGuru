@@ -10,6 +10,7 @@ ru:
       admin: "Администратор"
       gist: "Gist"
       badge: "Бейдж"
+      user_badge: "Бейдж пользователя"
 
     attributes:
       category:

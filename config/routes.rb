@@ -25,6 +25,9 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :badges, only: %i[index]
+  resources :user_badges, only: %i[index]
+
   devise_for :users,
              path_names: {
                sign_in: :login,
@@ -34,6 +37,4 @@ Rails.application.routes.draw do
                sessions: 'users/sessions',
                registrations: 'users/registrations'
              }
-
-  # resources :badges, only: %i[index]
 end

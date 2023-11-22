@@ -1,0 +1,24 @@
+<div class="row justify-content-center mt-3">
+  <div class="col col-md-12">
+    <h1><%= t('.header') %></h1>
+  </div>
+
+  <%= link_to t('shared.nav_bar.to_all_badges'),  badges_path %>
+
+  <div class="col-6">
+    <table class="table table-sm">
+      <thead class="table align-middle">
+      <tr>
+        <th scope="col"><%= t('admin.badges.index.table.badge_image') %></th>
+        <th scope="col"><%= t('admin.badges.index.table.name') %></th>
+        <th scope="col"><%= t('.receive_date') %></th>
+      </tr>
+      </thead>
+      <% @user_badges.each do |user_badge| %>
+        <tbody class="table-group-divider align-middle">
+          <%= render partial: 'user_badge', object: user_badge %>
+        </tbody>
+      <% end %>
+    </table>
+  </div>
+</div>

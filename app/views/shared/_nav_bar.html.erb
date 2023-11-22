@@ -8,6 +8,10 @@
   </span>
 
   <span class="navbar-text">
+    <%= link_to t('user_badges.index.header'),  user_badges_path %>
+  </span>
+
+  <span class="navbar-text">
     <% if user_signed_in? %>
       <%= t('.welcome_message', surname: current_user.surname, name: current_user.name) %> |
       <%= link_to t('.sign_out'), destroy_user_session_path, data: { turbo_method: :delete }, class: "btn btn-secondary text-light" %>

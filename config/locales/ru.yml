@@ -100,6 +100,10 @@ ru:
       failure: "Во время сохранения gist произошла ошибка."
       view_gist: "Посмотреть gist на GitHub"
 
+  user_badges:
+    index:
+      header: "Ваши бейджи"
+
   tests_mailer:
     completed_test:
       subject: "Вы только что завершили тест TestGuru!"
@@ -118,3 +122,5 @@ ru:
       sign_up: "Создать аккаунт"
       sign_in: "Войти"
       to_admin_panel: "Войти в Панель Администратора"
+      to_all_badges: "Ко всем возможным бейджам"
+      to_user_badges: "К вашим бейджам"

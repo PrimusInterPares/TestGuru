@@ -10,6 +10,7 @@ en:
       admin: "Administrator"
       gist: "Gist"
       badge: "Badge"
+      user_badge: "User badge"
 
     attributes:
       category:
@@ -38,7 +39,7 @@ en:
       badge:
         name: "Name"
         image_url: "Image URL"
-        rule: ""
+        rule: "Rule"
         parameter: "Parameter"
 
     errors:
