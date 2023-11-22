@@ -14,11 +14,9 @@
         <th scope="col"><%= t('.receive_date') %></th>
       </tr>
       </thead>
-      <% @user_badges.each do |user_badge| %>
-        <tbody class="table-group-divider align-middle">
-          <%= render partial: 'user_badge', object: user_badge %>
-        </tbody>
-      <% end %>
+      <tbody class="table-group-divider align-middle">
+        <%= render @user_badges %>
+      </tbody>
     </table>
   </div>
 </div>

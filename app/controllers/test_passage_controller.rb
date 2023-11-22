@@ -9,7 +9,7 @@ class TestPassageController < ApplicationController
     @test_passage.accept!(params[:answer_ids])
 
     if @test_passage.completed?
-      BadgeService.new(@test_passage).call
+      BadgeService.new(@test_passage).call if @test_passage.passed?
       TestsMailer.completed_test(@test_passage).deliver_now
       redirect_to result_test_passage_path(@test_passage), status: :see_other
     else
