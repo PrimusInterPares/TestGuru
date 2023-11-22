@@ -15,8 +15,8 @@ users = User.create!([
 categories = Category.create!([
                                 { title: 'Logic' },
                                 { title: 'Backend' },
-                                { title: 'Computer science' }
-
+                                { title: 'Computer science' },
+                                { title: 'Test'}
                               ])
 
 tests = Test.create!([
@@ -31,7 +31,7 @@ tests = Test.create!([
                        { title: 'Cyber security',
                          level: 2, category_id: categories[1].id, author_id: users[3].id },
                        { title: 'Test',
-                         level: 2, category_id: categories[1].id, author_id: users[3].id }
+                         level: 4, category_id: categories[3].id, author_id: users[3].id }
                      ])
 
 questions = Question.create!([
@@ -245,14 +245,17 @@ Gist.create!([
 badges = Badge.create!([
                          { name: 'Badge_1',
                            image_url: 'https://cdn0.iconfinder.com/data/icons/education-science-2/100/Education__science_2_10-1024.png',
-                           rule: 'all_tests_of_category_completed', parameter: '1' },
+                           rule: 'all_tests_of_category_completed', parameter: categories[1].id },
                          { name: 'Badge_2',
                            image_url: 'https://cdn0.iconfinder.com/data/icons/education-science-2/100/Education__science_2_10-1024.png',
-                           rule: 'success_on_first_try', parameter: '2' },
+                           rule: 'success_on_first_try', parameter: nil },
                          { name: 'Badge_3',
                            image_url: 'https://cdn0.iconfinder.com/data/icons/education-science-2/100/Education__science_2_10-1024.png',
-                           rule: 'all_tests_of_level_completed', parameter: '3' },
-                         { name: 'Badge_4',
+                           rule: 'all_tests_of_level_completed', parameter: '0' },
+                         { name: 'Badge_Test_Category',
                            image_url: 'https://cdn0.iconfinder.com/data/icons/education-science-2/100/Education__science_2_10-1024.png',
-                           rule: 'all_tests_of_category_completed', parameter: '4' }
+                           rule: 'all_tests_of_category_completed', parameter: categories[3].id },
+                         { name: 'Badge_Test_Level',
+                           image_url: 'https://cdn0.iconfinder.com/data/icons/education-science-2/100/Education__science_2_10-1024.png',
+                           rule: 'all_tests_of_level_completed', parameter: '4' }
                        ])
