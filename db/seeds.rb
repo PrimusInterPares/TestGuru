@@ -259,3 +259,13 @@ badges = Badge.create!([
                            image_url: 'https://cdn0.iconfinder.com/data/icons/education-science-2/100/Education__science_2_10-1024.png',
                            rule: 'all_tests_of_level_completed', parameter: '4' }
                        ])
+
+UserBadge.create!([
+                    { user_id: 4, badge_id: 4 },
+                    { user_id: 4, badge_id: 4 },
+                    { user_id: 4, badge_id: 4 },
+                    { user_id: 4, badge_id: 5 },
+                    { user_id: 4, badge_id: 5 },
+                    { user_id: 4, badge_id: 5 },
+                    { user_id: 4, badge_id: 5 }
+                  ])
