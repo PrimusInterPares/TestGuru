@@ -5,7 +5,7 @@ class Test < ApplicationRecord
   has_many :test_passages, dependent: :destroy
   has_many :users, through: :test_passages
 
-  validates :author_id, presence: true
+  validates :author_id, :ready_to_be_run, presence: true
 
   validates :level, numericality: { greater_than_or_equal_to: 0, only_integer: true }
 
