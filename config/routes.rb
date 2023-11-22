@@ -25,6 +25,8 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :user_badges, only: %i[index]
+
   devise_for :users,
              path_names: {
                sign_in: :login,

@@ -100,6 +100,10 @@ en:
       failure: "Error occurred while saving the gist."
       view_gist: "View gist on GitHub"
 
+  user_badges:
+    index:
+      header: "Your badges"
+
   tests_mailer:
     completed_test:
       subject: "You have just passed TestGuru test!"
@@ -116,3 +120,5 @@ en:
       sign_up: "Sign up"
       sign_in: "Sign in"
       to_admin_panel: "Enter Admin Panel"
+      to_all_badges: "To all possible badges"
+      to_user_badges: "To your badges"
