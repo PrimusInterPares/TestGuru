@@ -1,0 +1,21 @@
+<div class="row justify-content-center mt-3">
+  <div class="col col-md-12">
+    <h1><%= t('admin.badges.index.table.header') %></h1>
+  </div>
+
+  <%= link_to t('shared.nav_bar.to_user_badges'),  user_badges_path %>
+
+  <div class="col-4">
+    <table class="table table-sm">
+      <thead class="table align-middle">
+      <tr>
+        <th scope="col"><%= t('admin.badges.index.table.badge_image') %></th>
+        <th scope="col"><%= t('admin.badges.index.table.name') %></th>
+      </tr>
+      </thead>
+      <tbody class="table-group-divider align-middle">
+      <%= render @badges %>
+      </tbody>
+    </table>
+  </div>
+</div>
