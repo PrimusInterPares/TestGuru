@@ -1,5 +1,5 @@
 <tr>
-  <td style="text-align:center;"><%= image_tag(user_badge.image_url, size: "30x30", alt: t('admin.badges.badge.alt_image_tag')) %></td>
-  <td><%= user_badge.name %></td>
+  <td style="text-align:center;"><%= image_tag(user_badge.badge.image_url, size: "30x30", alt: t('admin.badges.badge.alt_image_tag')) %></td>
+  <td><%= user_badge.badge.name %></td>
   <td><%= l(user_badge.created_at, format: :long) %></td>
 </tr>
