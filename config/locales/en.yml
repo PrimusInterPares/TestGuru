@@ -14,6 +14,7 @@ en:
         level: "Level"
         category_id: "Category"
         author_id: "Author"
+        ready_to_be_run: "Readiness to be run"
       category:
         title: "Title"
       question:

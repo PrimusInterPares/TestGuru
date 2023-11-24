@@ -18,6 +18,11 @@
   <%= @test.author.surname %>
 </p>
 
+<p>
+  <strong><%= t('.table.ready_to_be_run') %>:</strong>
+  <%= @test.ready_to_be_run %>
+</p>
+
 <h3><%= t('.table.questions') %>:</h3>
 
 <%= link_to t('.new_question'), new_admin_test_question_path(test_id: @test.id), class: "btn btn-info" %>

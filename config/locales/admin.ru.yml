@@ -13,6 +13,7 @@ ru:
           level: "Уровень"
           category: "Категория"
           questions_count: "Количество вопросов"
+          ready_to_be_run: "Готов к прохождению"
           actions: "Действия"
         new_test: "Добавить тест"
       create:
@@ -30,6 +31,7 @@ ru:
           category_id: "Категория"
           author_id: "Автор"
           questions: "Вопросы теста"
+          ready_to_be_run: "Готов к прохождению"
         new_question: "Добавить вопрос"
         back_to_tests: "К списку тестов"
         edit: "Редактировать"
