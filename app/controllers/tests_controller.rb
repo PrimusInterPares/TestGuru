@@ -4,7 +4,7 @@ class TestsController < ApplicationController
   before_action :find_test, only: %i[start]
 
   def index
-    @tests = Test.all
+    @tests = Test.where(ready_to_be_run: true)
   end
 
   def start
