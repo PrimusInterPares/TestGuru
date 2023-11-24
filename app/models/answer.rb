@@ -3,6 +3,8 @@ class Answer < ApplicationRecord
 
   validates :body, :value, presence: true
 
+  validates_inclusion_of :correct, in: [true, false]
+
   validate :validate_max_answers, on: :create
 
   scope :correct, -> { where(correct: true) }
