@@ -9,6 +9,8 @@ class Test < ApplicationRecord
 
   validates :level, numericality: { greater_than_or_equal_to: 0, only_integer: true }
 
+  validates :ready_to_be_run, inclusion: [true, false]
+
   validates :title, presence: true,
                     uniqueness: { scope: :level }
 

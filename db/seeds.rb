@@ -21,17 +21,17 @@ categories = Category.create!([
 
 tests = Test.create!([
                        { title: 'Logical operations',
-                         level: 1, category_id: categories[0].id, author_id: users[0].id },
+                         level: 1, category_id: categories[0].id, author_id: users[0].id, ready_to_be_run: true },
                        { title: 'Information and information processes',
-                         level: 0, category_id: categories[2].id, author_id: users[2].id },
+                         level: 0, category_id: categories[2].id, author_id: users[2].id, ready_to_be_run: true },
                        { title: 'Input devices',
-                         level: 0, category_id: categories[2].id, author_id: users[1].id },
+                         level: 0, category_id: categories[2].id, author_id: users[1].id, ready_to_be_run: true },
                        { title: 'Computer networks',
-                         level: 1, category_id: categories[2].id, author_id: users[0].id },
+                         level: 1, category_id: categories[2].id, author_id: users[0].id, ready_to_be_run: true },
                        { title: 'Cyber security',
-                         level: 2, category_id: categories[1].id, author_id: users[3].id },
+                         level: 2, category_id: categories[1].id, author_id: users[3].id, ready_to_be_run: false },
                        { title: 'Test',
-                         level: 4, category_id: categories[3].id, author_id: users[3].id }
+                         level: 4, category_id: categories[3].id, author_id: users[3].id, ready_to_be_run: true }
                      ])
 
 questions = Question.create!([

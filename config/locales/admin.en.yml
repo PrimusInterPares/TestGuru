@@ -13,6 +13,7 @@ en:
           level: "Level"
           category: "Category"
           questions_count: "Questions count"
+          ready_to_be_run: "Ready to be run"
           actions: "Actions"
         new_test: "Add test"
       create:
@@ -30,6 +31,7 @@ en:
           category_id: "Category"
           author_id: "Author"
           questions: "Questions within test"
+          ready_to_be_run: "Ready to be run"
         new_question: "Add question"
         back_to_tests: "Back to tests list"
         edit: "Edit"

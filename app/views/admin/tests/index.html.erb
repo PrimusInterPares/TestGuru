@@ -3,7 +3,7 @@
     <h1><%= t('.table.header') %></h1>
   </div>
 
-  <div class="col-8">
+  <div class="col-12">
     <p><%= link_to t('.new_test'), new_admin_test_path, class: "btn btn-info" %></p>
 
     <table class="table table-sm">
@@ -13,6 +13,7 @@
           <th scope="col"><%= t('.table.level') %></th>
           <th scope="col"><%= t('.table.category') %></th>
           <th scope="col" class="text-center"><%= t('.table.questions_count') %></th>
+          <th scope="col" class="text-center"><%= t('.table.ready_to_be_run') %></th>
           <th scope="col" colspan='3' class="text-center"><%= t('.table.actions') %></th>
         </tr>
       </thead>
