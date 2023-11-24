@@ -4,8 +4,8 @@
   <td><%= test.category.title %></td>
   <td class="text-center"><%= test.questions.size %></td>
   <td class="text-center"><%= test.ready_to_be_run %></td>
-  <td><%= button_to t('.show'), admin_test_path(test), class: "btn btn-outline-dark" %></td>
-  <td><%= button_to t('.edit'), edit_admin_test_path(test), class: "btn btn-outline-dark" %></td>
+  <td><%= button_to t('.show'), admin_test_path(test), method: :get, class: "btn btn-outline-dark" %></td>
+  <td><%= button_to t('.edit'), edit_admin_test_path(test), method: :get, class: "btn btn-outline-dark" %></td>
 
   <td>
     <%= button_to t('.delete'),
