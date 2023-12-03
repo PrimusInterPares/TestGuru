@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 class Answer < ApplicationRecord
   belongs_to :question
 
   validates :body, :value, presence: true
 
-  validates_inclusion_of :correct, in: [true, false]
+  validates :correct, inclusion: [true, false]
 
   validate :validate_max_answers, on: :create
 
