@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
@@ -26,15 +28,6 @@ gem 'stimulus-rails'
 
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem 'jbuilder'
-
-# Use Redis adapter to run Action Cable in production
-# gem "redis", "~> 4.0"
-
-# Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
-# gem "kredis"
-
-# Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
-# gem 'bcrypt', '~> 3.1.19'
 
 # UI
 gem 'bootstrap'
@@ -66,12 +59,14 @@ gem 'rails-i18n'
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem 'debug', platforms: %i[mri mingw x64_mingw]
-  # Testing
-  gem 'rspec-rails', '~> 6.0.0'
   # Code style etc.
   gem 'rubocop', require: false
   # Shim to load environment variables
   gem 'dotenv-rails'
+  # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
+  # gem 'spring'
+  # Testing
+  gem 'rspec-rails', '~> 6.1.0'
 end
 
 group :development do
@@ -80,14 +75,13 @@ group :development do
 
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"
-
-  # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
-  # gem "spring"
 end
 
 group :test do
-  # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
-  # gem 'capybara'
+  # Testing
+  gem 'database_cleaner-active_record'
   gem 'factory_bot_rails'
-  # gem 'selenium-webdriver'
+  gem 'faker', '~> 3.2.2'
+  gem 'fuubar'
+  gem 'shoulda-matchers'
 end
