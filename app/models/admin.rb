@@ -1,4 +1,4 @@
-class Admin < User
+# frozen_string_literal: true
 
-  validates :name, :surname, presence: true
+class Admin < User
 end
