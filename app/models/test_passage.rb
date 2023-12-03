@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class TestPassage < ApplicationRecord
   belongs_to :user
   belongs_to :test
@@ -5,7 +7,11 @@ class TestPassage < ApplicationRecord
 
   before_validation :before_validation_set_first_question, on: %i[create update]
 
-  TEST_PASSING_SCORE = 85.freeze
+  validates :user_id, :test_id, presence: true
+
+  validates :correct_questions, numericality: { greater_than_or_equal_to: 0, only_integer: true }
+
+  TEST_PASSING_SCORE = 85
 
   def accept!(answer_ids)
     self.correct_questions += 1 if correct_answer?(answer_ids)
