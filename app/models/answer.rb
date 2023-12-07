@@ -11,6 +11,10 @@ class Answer < ApplicationRecord
 
   scope :correct, -> { where(correct: true) }
 
+  def self.max_answers
+    MAX_ANSWERS
+  end
+
   private
 
   MAX_ANSWERS = 4
