@@ -20,6 +20,7 @@ class Answer < ApplicationRecord
   MAX_ANSWERS = 4
 
   def validate_max_answers
-    errors.add(:question) if question.answers.size > MAX_ANSWERS
+    errors.add(:question) if question.answers.size >= MAX_ANSWERS
+    false
   end
 end
