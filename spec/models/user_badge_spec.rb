@@ -3,8 +3,6 @@
 require 'rails_helper'
 
 RSpec.describe UserBadge, type: :model do
-  subject { create(:user_badge) }
-
   describe 'associations' do
     it { should belong_to(:user).class_name('User') }
     it { should belong_to(:badge).class_name('Badge') }

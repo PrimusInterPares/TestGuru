@@ -3,12 +3,10 @@
 require 'rails_helper'
 
 RSpec.describe Question, type: :model do
-  subject { create(:question) }
-
   describe 'associations' do
     it { should belong_to(:test) }
-    it { should have_many(:answers) }
-    it { should have_many(:gists).class_name('Gist') }
+    it { should have_many(:answers).dependent(:destroy) }
+    it { should have_many(:gists).class_name('Gist').dependent(:destroy) }
   end
 
   describe 'validations' do
