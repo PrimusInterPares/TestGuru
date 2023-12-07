@@ -2,7 +2,7 @@
 
 FactoryBot.define do
   factory :gist do
-    association :question, factory: :question
+    question
     association :author, factory: :user
     url            { Faker::Internet.url }
     github_gist_id { Faker::Internet.uuid }

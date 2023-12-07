@@ -2,9 +2,9 @@
 
 FactoryBot.define do
   factory :test_passage do
-    association :user, factory: :user
-    association :test, factory: :test
-    association :current_question, factory: :question
+    user
+    test
+    current_question  { nil }
     correct_questions { Faker::Number.number(digits: 2) }
   end
 end

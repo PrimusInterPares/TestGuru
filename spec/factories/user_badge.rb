@@ -2,7 +2,7 @@
 
 FactoryBot.define do
   factory :user_badge do
-    association :user, factory: :user
-    association :badge, factory: :badge
+    user
+    badge
   end
 end

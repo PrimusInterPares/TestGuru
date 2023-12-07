@@ -4,7 +4,7 @@ FactoryBot.define do
   factory :test do
     title       { Faker::Superhero.name }
     level       { Faker::Number.digit }
-    association :category, factory: :category
+    category
     association :author, factory: :user
     ready_to_be_run { Faker::Boolean.boolean(true_ratio: 0.5) }
 
