@@ -5,7 +5,7 @@ class TestPassage < ApplicationRecord
   belongs_to :test
   belongs_to :current_question, class_name: 'Question', optional: true
 
-  before_validation :before_validation_set_first_question, on: %i[create update]
+  before_validation :set_first_question, on: %i[create update]
 
   validates :user_id, :test_id, presence: true
 
@@ -36,7 +36,7 @@ class TestPassage < ApplicationRecord
 
   private
 
-  def before_validation_set_first_question
+  def set_first_question
     self.current_question = next_question
   end
 
