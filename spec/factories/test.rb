@@ -15,5 +15,17 @@ FactoryBot.define do
     factory :not_ready_to_be_run_test do
       ready_to_be_run { false }
     end
+
+    factory :easy_test do
+      level { rand(0..1) }
+    end
+
+    factory :medium_test do
+      level { rand(2..4) }
+    end
+
+    factory :hard_test do
+      level { rand(5..100) }
+    end
   end
 end
