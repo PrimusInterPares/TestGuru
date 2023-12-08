@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :lockable, :timeoutable, :trackable and :omniauthable
@@ -32,6 +34,7 @@ class User < ApplicationRecord
         .where('test_passages.user_id = :id AND tests.level = :level', id:, level:)
   end
 
+  # returns the last TestPassage with the Test specified
   def test_passage(test)
     test_passages.order(id: :desc).find_by(test_id: test.id)
   end
