@@ -2,6 +2,6 @@
 
 FactoryBot.define do
   factory :category do
-    title { Faker::ProgrammingLanguage.name }
+    title { Faker::String.random.remove("\u0000") }
   end
 end

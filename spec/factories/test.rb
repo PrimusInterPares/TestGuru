@@ -2,7 +2,7 @@
 
 FactoryBot.define do
   factory :test do
-    title       { Faker::Superhero.name }
+    title       { Faker::String.random.remove("\u0000") }
     level       { Faker::Number.digit }
     category
     association :author, factory: :user
