@@ -70,5 +70,5 @@ RSpec.configure do |config|
   # config.filter_gems_from_backtrace("gem name")
 
   # Custom progress bar for gem 'fuubar'
-  config.fuubar_progress_bar_options = { format: 'Progress: <%B> %p%% %a' }
+  # config.fuubar_progress_bar_options = { format: '<%:total> Progress: <%B> %p%% %a' }
 end
