@@ -22,12 +22,12 @@ class TestPassage < ApplicationRecord
     current_question.nil?
   end
 
-  def total_correct_questions
+  def count_questions
     test.questions.count
   end
 
   def correct_questions_percentage
-    self.correct_questions.to_f / total_correct_questions * 100
+    self.correct_questions.to_f / count_questions * 100
   end
 
   def passed?
